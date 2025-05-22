@@ -2,7 +2,7 @@
 Library  DateTime
 
 *** Variables ***
-${BROWSER_NAME}     chrome
+${BROWSER_NAME}     chromebrowser
 
 *** Test Cases ***
 TC1
