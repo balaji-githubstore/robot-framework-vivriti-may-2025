@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-21T13:27:21.996871" rpa="false" schemaversion="5">
+<suite id="s1" name="Demo1 Basics Suite" source="D:\Balaji\Company\Viv\AutomationProject\robot_selenium_suite\demo1_basics_suite.robot">
+<test id="s1-t1" name="TC1" line="5">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-21T13:27:22.338507" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<arg>url=https://www.google.com/</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-21T13:27:22.338066" elapsed="2.659306"/>
+</kw>
+<status status="PASS" start="2025-05-21T13:27:22.336668" elapsed="2.662623"/>
+</test>
+<status status="PASS" start="2025-05-21T13:27:21.998271" elapsed="3.003129"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Demo1 Basics Suite" id="s1" pass="1" fail="0" skip="0">Demo1 Basics Suite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
