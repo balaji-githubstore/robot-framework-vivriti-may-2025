@@ -1,50 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-22T12:22:22.641296" rpa="false" schemaversion="5">
-<suite id="s1" name="Demo2 Meddibuddy" source="D:\Balaji\Company\Vivriti\AutomationProject\robot_selenium_suite\demo2_meddibuddy.robot">
-<test id="s1-t1" name="TC2" line="5">
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-23T12:05:24.498392" rpa="false" schemaversion="5">
+<suite id="s1" name="Demo4 Frame Suite" source="D:\Balaji\Company\Vivriti\AutomationProject\robot_selenium_suite\demo4_frame_suite.robot">
+<test id="s1-t1" name="TC1" line="5">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-22T12:22:23.445091" level="INFO">Opening browser 'chrome' to base url 'https://www.medibuddy.in/'.</msg>
-<arg>url=https://www.medibuddy.in/</arg>
+<msg time="2025-05-23T12:05:25.132720" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-22T12:22:23.444476" elapsed="4.668495"/>
+<status status="PASS" start="2025-05-23T12:05:25.132016" elapsed="1.840573"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-23T12:05:26.973286" elapsed="0.132470"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>30s</arg>
+<arg>10s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-05-22T12:22:28.113660" elapsed="0.008188"/>
+<status status="PASS" start="2025-05-23T12:05:27.107749" elapsed="0.018684"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-22T12:22:28.123596" level="INFO">Clicking element 'link=Login'.</msg>
-<arg>link=Login</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-22T12:22:28.122554" elapsed="2.420497"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-22T12:22:35.544624" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-22T12:22:30.543451" elapsed="5.001699"/>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-23T12:05:27.130791" level="INFO">Opening url 'https://netbanking.hdfcbank.com/netbanking/'</msg>
+<arg>url=https://netbanking.hdfcbank.com/netbanking/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-23T12:05:27.128853" elapsed="2.997377"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-22T12:22:35.546701" level="INFO">Typing text '89844432' into text field 'id=phone'.</msg>
-<arg>id=phone</arg>
-<arg>89844432</arg>
+<msg time="2025-05-23T12:05:30.134104" level="INFO">Typing text 'john123' into text field 'name=fldLoginUserId'.</msg>
+<msg time="2025-05-23T12:05:40.429415" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-23T12:05:40.429748" level="FAIL">Element with locator 'name=fldLoginUserId' not found.</msg>
+<arg>name=fldLoginUserId</arg>
+<arg>john123</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-22T12:22:35.545767" elapsed="0.198606"/>
+<status status="FAIL" start="2025-05-23T12:05:30.126694" elapsed="10.349712">Element with locator 'name=fldLoginUserId' not found.</status>
 </kw>
-<status status="PASS" start="2025-05-22T12:22:23.442761" elapsed="12.301993"/>
+<status status="FAIL" start="2025-05-23T12:05:25.129275" elapsed="15.347494">Element with locator 'name=fldLoginUserId' not found.</status>
 </test>
-<status status="PASS" start="2025-05-22T12:22:22.662047" elapsed="13.083969"/>
+<status status="FAIL" start="2025-05-23T12:05:24.530927" elapsed="15.946746"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Demo2 Meddibuddy" id="s1" pass="1" fail="0" skip="0">Demo2 Meddibuddy</stat>
+<stat name="Demo4 Frame Suite" id="s1" pass="0" fail="1" skip="0">Demo4 Frame Suite</stat>
 </suite>
 </statistics>
 <errors>
