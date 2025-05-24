@@ -48,7 +48,7 @@ TC4 Javascript
     Sleep    5s
 
 
-TC4 Javascript
+TC5 Javascript
     Open Browser    browser=chrome  options=add_argument("start-maximized");add_argument("--disable-notifications");
 #    Maximize Browser Window
     Set Selenium Implicit Wait    30s
@@ -63,6 +63,14 @@ TC4 Javascript
 
     ${ele2}   Get WebElement    xpath=//input[@name='dateReturn']
     Execute Javascript  arguments[0].value='30 Jul 2025'    ARGUMENTS   ${ele2}
+
+    ${output}   Execute Javascript     return document.querySelector("input[name='dateReturn']").value
+    Log To Console    ${output}
+    ${output}   Execute Javascript     return document.title
+    Log To Console    ${output}
+
+
+
 
 TC7 Not required
     Execute Javascript  document.querySelector("input[name='dateDeparture']").value='30 Jun 2025';document.querySelector("input[name='dateReturn']").value='30 Jul 2025'

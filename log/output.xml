@@ -1,107 +1,243 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-24T12:32:41.055101" rpa="false" schemaversion="5">
-<suite id="s1" name="Demo6 Advance Suite" source="D:\Balaji\Company\Vivriti\AutomationProject\robot_selenium_suite\demo6_advance_suite.robot">
-<test id="s1-t1" name="TC4 Javascript" line="31">
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-24T13:50:38.898062" rpa="false" schemaversion="5">
+<suite id="s1" name="Demo8 Tables Suite" source="D:\Balaji\Company\Vivriti\AutomationProject\robot_selenium_suite\demo8_tables_suite.robot">
+<test id="s1-t1" name="TC2 All Names" line="17">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-24T12:32:41.753267" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg time="2025-05-24T13:50:40.032559" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
 <arg>browser=chrome</arg>
-<arg>options=add_argument("start-maximized");add_argument("--disable-notifications");</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-24T12:32:41.752922" elapsed="1.607795"/>
+<status status="PASS" start="2025-05-24T13:50:40.032050" elapsed="1.666507"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-24T13:50:41.699577" elapsed="0.392889"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>30s</arg>
+<arg>10s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-05-24T12:32:43.363673" elapsed="0.009305"/>
+<status status="PASS" start="2025-05-24T13:50:42.093755" elapsed="0.011474"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-05-24T12:32:43.374898" level="INFO">Opening url 'https://www.malaysiaairlines.com/us/en/home.html'</msg>
-<arg>url=https://www.malaysiaairlines.com/us/en/home.html</arg>
+<msg time="2025-05-24T13:50:42.106822" level="INFO">Opening url 'https://datatables.net/extensions/select/examples/checkbox/selectPage.html'</msg>
+<arg>url=https://datatables.net/extensions/select/examples/checkbox/selectPage.html</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-05-24T12:32:43.373909" elapsed="1.247654"/>
+<status status="PASS" start="2025-05-24T13:50:42.106017" elapsed="3.186349"/>
 </kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-05-24T13:50:45.347659" level="INFO">${row_count} = 1</msg>
+<var>${row_count}</var>
+<arg>xpath=//table[@id='example']/tbody/tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-05-24T13:50:45.302228" elapsed="0.045629"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-24T13:50:45.618736" level="INFO">${name} = Tiger Nixon</msg>
+<var>${name}</var>
+<arg>xpath=//table[@id='example']/tbody/tr[${i}]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-24T13:50:45.348645" elapsed="0.270690"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-24T13:50:45.619942" elapsed="0.001095"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-05-24T13:50:45.348434" elapsed="0.273039"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>${row_count}+1</value>
+<status status="PASS" start="2025-05-24T13:50:45.348044" elapsed="0.273778"/>
+</for>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-24T12:32:44.626630" level="INFO">Clicking element 'xpath=//span[text()='Accept all cookies']'.</msg>
-<arg>xpath=//span[text()='Accept all cookies']</arg>
+<msg time="2025-05-24T13:50:45.623628" level="INFO">Clicking element 'css=[aria-label="Last"]'.</msg>
+<msg time="2025-05-24T13:50:47.152297" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-24T13:50:47.152778" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="dt-paging-button last" role="link" type="button" aria-controls="example" aria-label="Last" data-dt-idx="last"&gt;...&lt;/button&gt; is not clickable at point (1155, 361). Other element would receive the click: &lt;div class="js" style="display: block;"&gt;...&lt;/div&gt;
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+	GetHandleVerifier [0x00007FF77BD2CF45+75717]
+	GetHandleVerifier [0x00007FF77BD2CFA0+75808]
+	(No symbol) [0x00007FF77BAF8F9A]
+	(No symbol) [0x00007FF77BB57439]
+	(No symbol) [0x00007FF77BB54DF2]
+	(No symbol) [0x00007FF77BB51EA1]
+	(No symbol) [0x00007FF77BB50DA1]
+	(No symbol) [0x00007FF77BB42394]
+	(No symbol) [0x00007FF77BB7737A]
+	(No symbol) [0x00007FF77BB41C46]
+	(No symbol) [0x00007FF77BB77590]
+	(No symbol) [0x00007FF77BB9F39C]
+	(No symbol) [0x00007FF77BB77153]
+	(No symbol) [0x00007FF77BB40421]
+	(No symbol) [0x00007FF77BB411B3]
+	GetHandleVerifier [0x00007FF77C02D71D+3223453]
+	GetHandleVerifier [0x00007FF77C027CC2+3200322]
+	GetHandleVerifier [0x00007FF77C045AF3+3322739]
+	GetHandleVerifier [0x00007FF77BD46A1A+180890]
+	GetHandleVerifier [0x00007FF77BD4E11F+211359]
+	GetHandleVerifier [0x00007FF77BD35294+109332]
+	GetHandleVerifier [0x00007FF77BD35442+109762]
+	GetHandleVerifier [0x00007FF77BD1BA59+4825]
+	BaseThreadInitThunk [0x00007FFE0739E8D7+23]
+	RtlUserThreadStart [0x00007FFE087FC5DC+44]
+</msg>
+<arg>css=[aria-label="Last"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-24T12:32:44.622814" elapsed="3.150952"/>
+<status status="FAIL" start="2025-05-24T13:50:45.622676" elapsed="1.536877">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="dt-paging-button last" role="link" type="button" aria-controls="example" aria-label="Last" data-dt-idx="last"&gt;...&lt;/button&gt; is not clickable at point (1155, 361). Other element would receive the click: &lt;div class="js" style="display: block;"&gt;...&lt;/div&gt;
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+	GetHandleVerifier [0x00007FF77BD2CF45+75717]
+	GetHandleVerifier [0x00007FF77BD2CFA0+75808]
+	(No symbol) [0x00007FF77BAF8F9A]
+	(No symbol) [0x00007FF77BB57439]
+	(No symbol) [0x00007FF77BB54DF2]
+	(No symbol) [0x00007FF77BB51EA1]
+	(No symbol) [0x00007FF77BB50DA1]
+	(No symbol) [0x00007FF77BB42394]
+	(No symbol) [0x00007FF77BB7737A]
+	(No symbol) [0x00007FF77BB41C46]
+	(No symbol) [0x00007FF77BB77590]
+	(No symbol) [0x00007FF77BB9F39C]
+	(No symbol) [0x00007FF77BB77153]
+	(No symbol) [0x00007FF77BB40421]
+	(No symbol) [0x00007FF77BB411B3]
+	GetHandleVerifier [0x00007FF77C02D71D+3223453]
+	GetHandleVerifier [0x00007FF77C027CC2+3200322]
+	GetHandleVerifier [0x00007FF77C045AF3+3322739]
+	GetHandleVerifier [0x00007FF77BD46A1A+180890]
+	GetHandleVerifier [0x00007FF77BD4E11F+211359]
+	GetHandleVerifier [0x00007FF77BD35294+109332]
+	GetHandleVerifier [0x00007FF77BD35442+109762]
+	GetHandleVerifier [0x00007FF77BD1BA59+4825]
+	BaseThreadInitThunk [0x00007FFE0739E8D7+23]
+	RtlUserThreadStart [0x00007FFE087FC5DC+44]
+</status>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-24T12:32:47.776271" level="INFO">Typing text 'chennai' into text field 'xpath=//div[@id='book-flight']//input[@aria-label='From']'.</msg>
-<arg>xpath=//div[@id='book-flight']//input[@aria-label='From']</arg>
-<arg>chennai</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-24T12:32:47.774731" elapsed="2.159873"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-24T12:32:49.936563" level="INFO">Clicking element 'xpath=//div[@id='book-flight']//div[text()='MAA']'.</msg>
-<arg>xpath=//div[@id='book-flight']//div[text()='MAA']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-24T12:32:49.935610" elapsed="1.014610"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-24T12:32:50.951039" level="INFO">Typing text 'kuala lum' into text field 'xpath=//div[@id='book-flight']//input[@aria-label='To']'.</msg>
-<arg>xpath=//div[@id='book-flight']//input[@aria-label='To']</arg>
-<arg>kuala lum</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-24T12:32:50.950648" elapsed="0.603358"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-24T12:32:51.554708" level="INFO">Clicking element 'xpath=(//div[@id='book-flight']//div[text()='KUL'])[2]'.</msg>
-<arg>xpath=(//div[@id='book-flight']//div[text()='KUL'])[2]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-24T12:32:51.554405" elapsed="0.501936"/>
-</kw>
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-05-24T12:32:52.061261" level="INFO">Executing JavaScript:
-document.querySelector("input[name='dateDeparture']").value='30 Jun 2025'
-Without any arguments.</msg>
-<arg>document.querySelector("input[name='dateDeparture']").value='30 Jun 2025'</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-05-24T12:32:52.057305" elapsed="0.397412"/>
-</kw>
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-05-24T12:32:52.455623" level="INFO">Executing JavaScript:
-document.querySelector("input[name='dateReturn']").value='30 Jul 2025'
-Without any arguments.</msg>
-<arg>document.querySelector("input[name='dateReturn']").value='30 Jul 2025'</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-05-24T12:32:52.455028" elapsed="0.146947"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-24T12:32:57.605916" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-24T12:32:52.603267" elapsed="5.003359"/>
-</kw>
+<var name="${counter}">1</var>
+<status status="FAIL" start="2025-05-24T13:50:45.295165" elapsed="1.864716">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="dt-paging-button last" role="link" type="button" aria-controls="example" aria-label="Last" data-dt-idx="last"&gt;...&lt;/button&gt; is not clickable at point (1155, 361). Other element would receive the click: &lt;div class="js" style="display: block;"&gt;...&lt;/div&gt;
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+	GetHandleVerifier [0x00007FF77BD2CF45+75717]
+	GetHandleVerifier [0x00007FF77BD2CFA0+75808]
+	(No symbol) [0x00007FF77BAF8F9A]
+	(No symbol) [0x00007FF77BB57439]
+	(No symbol) [0x00007FF77BB54DF2]
+	(No symbol) [0x00007FF77BB51EA1]
+	(No symbol) [0x00007FF77BB50DA1]
+	(No symbol) [0x00007FF77BB42394]
+	(No symbol) [0x00007FF77BB7737A]
+	(No symbol) [0x00007FF77BB41C46]
+	(No symbol) [0x00007FF77BB77590]
+	(No symbol) [0x00007FF77BB9F39C]
+	(No symbol) [0x00007FF77BB77153]
+	(No symbol) [0x00007FF77BB40421]
+	(No symbol) [0x00007FF77BB411B3]
+	GetHandleVerifier [0x00007FF77C02D71D+3223453]
+	GetHandleVerifier [0x00007FF77C027CC2+3200322]
+	GetHandleVerifier [0x00007FF77C045AF3+3322739]
+	GetHandleVerifier [0x00007FF77BD46A1A+180890]
+	GetHandleVerifier [0x00007FF77BD4E11F+211359]
+	GetHandleVerifier [0x00007FF77BD35294+109332]
+	GetHandleVerifier [0x00007FF77BD35442+109762]
+	GetHandleVerifier [0x00007FF77BD1BA59+4825]
+	BaseThreadInitThunk [0x00007FFE0739E8D7+23]
+	RtlUserThreadStart [0x00007FFE087FC5DC+44]
+</status>
+</iter>
+<var>${counter}</var>
+<value>1</value>
+<value>10</value>
+<status status="FAIL" start="2025-05-24T13:50:45.292889" elapsed="1.867250">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="dt-paging-button last" role="link" type="button" aria-controls="example" aria-label="Last" data-dt-idx="last"&gt;...&lt;/button&gt; is not clickable at point (1155, 361). Other element would receive the click: &lt;div class="js" style="display: block;"&gt;...&lt;/div&gt;
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+	GetHandleVerifier [0x00007FF77BD2CF45+75717]
+	GetHandleVerifier [0x00007FF77BD2CFA0+75808]
+	(No symbol) [0x00007FF77BAF8F9A]
+	(No symbol) [0x00007FF77BB57439]
+	(No symbol) [0x00007FF77BB54DF2]
+	(No symbol) [0x00007FF77BB51EA1]
+	(No symbol) [0x00007FF77BB50DA1]
+	(No symbol) [0x00007FF77BB42394]
+	(No symbol) [0x00007FF77BB7737A]
+	(No symbol) [0x00007FF77BB41C46]
+	(No symbol) [0x00007FF77BB77590]
+	(No symbol) [0x00007FF77BB9F39C]
+	(No symbol) [0x00007FF77BB77153]
+	(No symbol) [0x00007FF77BB40421]
+	(No symbol) [0x00007FF77BB411B3]
+	GetHandleVerifier [0x00007FF77C02D71D+3223453]
+	GetHandleVerifier [0x00007FF77C027CC2+3200322]
+	GetHandleVerifier [0x00007FF77C045AF3+3322739]
+	GetHandleVerifier [0x00007FF77BD46A1A+180890]
+	GetHandleVerifier [0x00007FF77BD4E11F+211359]
+	GetHandleVerifier [0x00007FF77BD35294+109332]
+	GetHandleVerifier [0x00007FF77BD35442+109762]
+	GetHandleVerifier [0x00007FF77BD1BA59+4825]
+	BaseThreadInitThunk [0x00007FFE0739E8D7+23]
+	RtlUserThreadStart [0x00007FFE087FC5DC+44]
+</status>
+</for>
 <kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
 <kw name="Log Title" owner="SeleniumLibrary">
-<msg time="2025-05-24T12:32:57.626250" level="INFO">Malaysia Airlines | Book International &amp; Domestic Flight Tickets |</msg>
+<msg time="2025-05-24T13:50:47.168388" level="INFO">DataTables example - Current page selection only</msg>
 <doc>Logs and returns the title of the current page.</doc>
-<status status="PASS" start="2025-05-24T12:32:57.608989" elapsed="0.017675"/>
+<status status="PASS" start="2025-05-24T13:50:47.161567" elapsed="0.007015"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-24T12:32:57.627068" elapsed="2.851708"/>
+<status status="PASS" start="2025-05-24T13:50:47.168773" elapsed="2.777257"/>
 </kw>
 <arg>Log Title</arg>
 <arg>AND</arg>
 <arg>Close Browser</arg>
 <doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2025-05-24T12:32:57.607981" elapsed="2.870998"/>
+<status status="PASS" start="2025-05-24T13:50:47.161026" elapsed="2.785786"/>
 </kw>
-<status status="PASS" start="2025-05-24T12:32:41.751908" elapsed="18.727188"/>
+<status status="FAIL" start="2025-05-24T13:50:40.030494" elapsed="9.917083">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="dt-paging-button last" role="link" type="button" aria-controls="example" aria-label="Last" data-dt-idx="last"&gt;...&lt;/button&gt; is not clickable at point (1155, 361). Other element would receive the click: &lt;div class="js" style="display: block;"&gt;...&lt;/div&gt;
+  (Session info: chrome=136.0.7103.114)
+Stacktrace:
+	GetHandleVerifier [0x00007FF77BD2CF45+75717]
+	GetHandleVerifier [0x00007FF77BD2CFA0+75808]
+	(No symbol) [0x00007FF77BAF8F9A]
+	(No symbol) [0x00007FF77BB57439]
+	(No symbol) [0x00007FF77BB54DF2]
+	(No symbol) [0x00007FF77BB51EA1]
+	(No symbol) [0x00007FF77BB50DA1]
+	(No symbol) [0x00007FF77BB42394]
+	(No symbol) [0x00007FF77BB7737A]
+	(No symbol) [0x00007FF77BB41C46]
+	(No symbol) [0x00007FF77BB77590]
+	(No symbol) [0x00007FF77BB9F39C]
+	(No symbol) [0x00007FF77BB77153]
+	(No symbol) [0x00007FF77BB40421]
+	(No symbol) [0x00007FF77BB411B3]
+	GetHandleVerifier [0x00007FF77C02D71D+3223453]
+	GetHandleVerifier [0x00007FF77C027CC2+3200322]
+	GetHandleVerifier [0x00007FF77C045AF3+3322739]
+	GetHandleVerifier [0x00007FF77BD46A1A+180890]
+	GetHandleVerifier [0x00007FF77BD4E11F+211359]
+	GetHandleVerifier [0x00007FF77BD35294+109332]
+	GetHandleVerifier [0x00007FF77BD35442+109762]
+	GetHandleVerifier [0x00007FF77BD1BA59+4825]
+	BaseThreadInitThunk [0x00007FFE0739E8D7+23]
+	RtlUserThreadStart [0x00007FFE087FC5DC+44]
+</status>
 </test>
-<status status="PASS" start="2025-05-24T12:32:41.075729" elapsed="19.404402"/>
+<status status="FAIL" start="2025-05-24T13:50:38.978445" elapsed="10.973195"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Demo6 Advance Suite" id="s1" pass="1" fail="0" skip="0">Demo6 Advance Suite</stat>
+<stat name="Demo8 Tables Suite" id="s1" pass="0" fail="1" skip="0">Demo8 Tables Suite</stat>
 </suite>
 </statistics>
 <errors>
