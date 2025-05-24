@@ -1,49 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-23T12:05:24.498392" rpa="false" schemaversion="5">
-<suite id="s1" name="Demo4 Frame Suite" source="D:\Balaji\Company\Vivriti\AutomationProject\robot_selenium_suite\demo4_frame_suite.robot">
-<test id="s1-t1" name="TC1" line="5">
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-24T12:32:41.055101" rpa="false" schemaversion="5">
+<suite id="s1" name="Demo6 Advance Suite" source="D:\Balaji\Company\Vivriti\AutomationProject\robot_selenium_suite\demo6_advance_suite.robot">
+<test id="s1-t1" name="TC4 Javascript" line="31">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-23T12:05:25.132720" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg time="2025-05-24T12:32:41.753267" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
 <arg>browser=chrome</arg>
+<arg>options=add_argument("start-maximized");add_argument("--disable-notifications");</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-23T12:05:25.132016" elapsed="1.840573"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-23T12:05:26.973286" elapsed="0.132470"/>
+<status status="PASS" start="2025-05-24T12:32:41.752922" elapsed="1.607795"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>10s</arg>
+<arg>30s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-05-23T12:05:27.107749" elapsed="0.018684"/>
+<status status="PASS" start="2025-05-24T12:32:43.363673" elapsed="0.009305"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-05-23T12:05:27.130791" level="INFO">Opening url 'https://netbanking.hdfcbank.com/netbanking/'</msg>
-<arg>url=https://netbanking.hdfcbank.com/netbanking/</arg>
+<msg time="2025-05-24T12:32:43.374898" level="INFO">Opening url 'https://www.malaysiaairlines.com/us/en/home.html'</msg>
+<arg>url=https://www.malaysiaairlines.com/us/en/home.html</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-05-23T12:05:27.128853" elapsed="2.997377"/>
+<status status="PASS" start="2025-05-24T12:32:43.373909" elapsed="1.247654"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-24T12:32:44.626630" level="INFO">Clicking element 'xpath=//span[text()='Accept all cookies']'.</msg>
+<arg>xpath=//span[text()='Accept all cookies']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-24T12:32:44.622814" elapsed="3.150952"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-23T12:05:30.134104" level="INFO">Typing text 'john123' into text field 'name=fldLoginUserId'.</msg>
-<msg time="2025-05-23T12:05:40.429415" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-05-23T12:05:40.429748" level="FAIL">Element with locator 'name=fldLoginUserId' not found.</msg>
-<arg>name=fldLoginUserId</arg>
-<arg>john123</arg>
+<msg time="2025-05-24T12:32:47.776271" level="INFO">Typing text 'chennai' into text field 'xpath=//div[@id='book-flight']//input[@aria-label='From']'.</msg>
+<arg>xpath=//div[@id='book-flight']//input[@aria-label='From']</arg>
+<arg>chennai</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="FAIL" start="2025-05-23T12:05:30.126694" elapsed="10.349712">Element with locator 'name=fldLoginUserId' not found.</status>
+<status status="PASS" start="2025-05-24T12:32:47.774731" elapsed="2.159873"/>
 </kw>
-<status status="FAIL" start="2025-05-23T12:05:25.129275" elapsed="15.347494">Element with locator 'name=fldLoginUserId' not found.</status>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-24T12:32:49.936563" level="INFO">Clicking element 'xpath=//div[@id='book-flight']//div[text()='MAA']'.</msg>
+<arg>xpath=//div[@id='book-flight']//div[text()='MAA']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-24T12:32:49.935610" elapsed="1.014610"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-24T12:32:50.951039" level="INFO">Typing text 'kuala lum' into text field 'xpath=//div[@id='book-flight']//input[@aria-label='To']'.</msg>
+<arg>xpath=//div[@id='book-flight']//input[@aria-label='To']</arg>
+<arg>kuala lum</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-24T12:32:50.950648" elapsed="0.603358"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-24T12:32:51.554708" level="INFO">Clicking element 'xpath=(//div[@id='book-flight']//div[text()='KUL'])[2]'.</msg>
+<arg>xpath=(//div[@id='book-flight']//div[text()='KUL'])[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-24T12:32:51.554405" elapsed="0.501936"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-24T12:32:52.061261" level="INFO">Executing JavaScript:
+document.querySelector("input[name='dateDeparture']").value='30 Jun 2025'
+Without any arguments.</msg>
+<arg>document.querySelector("input[name='dateDeparture']").value='30 Jun 2025'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-24T12:32:52.057305" elapsed="0.397412"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-24T12:32:52.455623" level="INFO">Executing JavaScript:
+document.querySelector("input[name='dateReturn']").value='30 Jul 2025'
+Without any arguments.</msg>
+<arg>document.querySelector("input[name='dateReturn']").value='30 Jul 2025'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-24T12:32:52.455028" elapsed="0.146947"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-24T12:32:57.605916" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-24T12:32:52.603267" elapsed="5.003359"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Log Title" owner="SeleniumLibrary">
+<msg time="2025-05-24T12:32:57.626250" level="INFO">Malaysia Airlines | Book International &amp; Domestic Flight Tickets |</msg>
+<doc>Logs and returns the title of the current page.</doc>
+<status status="PASS" start="2025-05-24T12:32:57.608989" elapsed="0.017675"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-24T12:32:57.627068" elapsed="2.851708"/>
+</kw>
+<arg>Log Title</arg>
+<arg>AND</arg>
+<arg>Close Browser</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-05-24T12:32:57.607981" elapsed="2.870998"/>
+</kw>
+<status status="PASS" start="2025-05-24T12:32:41.751908" elapsed="18.727188"/>
 </test>
-<status status="FAIL" start="2025-05-23T12:05:24.530927" elapsed="15.946746"/>
+<status status="PASS" start="2025-05-24T12:32:41.075729" elapsed="19.404402"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Demo4 Frame Suite" id="s1" pass="0" fail="1" skip="0">Demo4 Frame Suite</stat>
+<stat name="Demo6 Advance Suite" id="s1" pass="1" fail="0" skip="0">Demo6 Advance Suite</stat>
 </suite>
 </statistics>
 <errors>

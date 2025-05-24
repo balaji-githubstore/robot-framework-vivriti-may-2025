@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-23T13:14:30.414375" rpa="false" schemaversion="5">
+<suite id="s1" name="Demo3" source="D:\Balaji\Company\Vivriti\AutomationProject\robot_suite\demo3.robot">
+<test id="s1-t1" name="TC1" line="2">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>D:\\Balaji\\Company\\Vivriti\\AutomationProject\\robot_suite</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-23T13:14:30.453180" elapsed="0.000278"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${OUTPUT_DIR}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-23T13:14:30.453742" elapsed="0.000455"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${EXECDIR}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-23T13:14:30.454489" elapsed="0.000392"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${TEMPDIR}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-23T13:14:30.455232" elapsed="0.000576"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${TEST_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-23T13:14:30.456157" elapsed="0.000324"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${SUITE_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-23T13:14:30.456739" elapsed="0.000323"/>
+</kw>
+<status status="PASS" start="2025-05-23T13:14:30.452476" elapsed="0.004885"/>
+</test>
+<status status="PASS" start="2025-05-23T13:14:30.415749" elapsed="0.042609"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Demo3" id="s1" pass="1" fail="0" skip="0">Demo3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
