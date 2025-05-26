@@ -1,234 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-24T13:50:38.898062" rpa="false" schemaversion="5">
-<suite id="s1" name="Demo8 Tables Suite" source="D:\Balaji\Company\Vivriti\AutomationProject\robot_selenium_suite\demo8_tables_suite.robot">
-<test id="s1-t1" name="TC2 All Names" line="17">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-24T13:50:40.032559" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<arg>browser=chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-24T13:50:40.032050" elapsed="1.666507"/>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-26T13:25:51.789763" rpa="false" schemaversion="5">
+<suite id="s1" name="Demo12 Db Suite" source="D:\Balaji\Company\Vivriti\AutomationProject\robot_selenium_suite\demo12_db_suite.robot">
+<test id="s1-t1" name="TC1" line="5">
+<kw name="Connect To Database" owner="DatabaseLibrary">
+<msg time="2025-05-26T13:25:51.875665" level="WARN">Argument 'dbapiModuleName' is deprecated, use 'db_module' instead</msg>
+<msg time="2025-05-26T13:25:51.879541" level="INFO">Replacing 'dbapiModuleName' with 'db_module'</msg>
+<msg time="2025-05-26T13:25:51.879839" level="WARN">Argument 'dbName' is deprecated, use 'db_name' instead</msg>
+<msg time="2025-05-26T13:25:51.881097" level="INFO">Replacing 'dbName' with 'db_name'</msg>
+<msg time="2025-05-26T13:25:51.882871" level="WARN">Argument 'dbUsername' is deprecated, use 'db_user' instead</msg>
+<msg time="2025-05-26T13:25:51.884628" level="INFO">Replacing 'dbUsername' with 'db_user'</msg>
+<msg time="2025-05-26T13:25:51.885404" level="WARN">Argument 'dbPassword' is deprecated, use 'db_password' instead</msg>
+<msg time="2025-05-26T13:25:51.886570" level="INFO">Replacing 'dbPassword' with 'db_password'</msg>
+<msg time="2025-05-26T13:25:51.886842" level="WARN">Argument 'dbHost' is deprecated, use 'db_host' instead</msg>
+<msg time="2025-05-26T13:25:51.887039" level="INFO">Replacing 'dbHost' with 'db_host'</msg>
+<msg time="2025-05-26T13:25:51.887208" level="WARN">Argument 'dbPort' is deprecated, use 'db_port' instead</msg>
+<msg time="2025-05-26T13:25:51.887347" level="INFO">Replacing 'dbPort' with 'db_port'</msg>
+<msg time="2025-05-26T13:25:51.887460" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg time="2025-05-26T13:25:51.887683" level="INFO">Configuration file doesn't exist</msg>
+<msg time="2025-05-26T13:25:51.922751" level="INFO">Connect to DB using : pymysql.connect(db='dbfree_db', user='dbfree_db', passwd=***, host='db4free.net', port=3306, charset='utf8mb4')</msg>
+<arg>dbapiModuleName=pymysql</arg>
+<arg>dbName=dbfree_db</arg>
+<arg>dbUsername=dbfree_db</arg>
+<arg>dbPassword=12345678</arg>
+<arg>dbHost=db4free.net</arg>
+<arg>dbPort=3306</arg>
+<doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
+Along with listed commonly used arguments (`db_name`, `db_host` etc.)
+you can set any other DB module specific parameters as key/value pairs.</doc>
+<status status="PASS" start="2025-05-26T13:25:51.874818" elapsed="1.683586"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-24T13:50:41.699577" elapsed="0.392889"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>10s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-05-24T13:50:42.093755" elapsed="0.011474"/>
-</kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-05-24T13:50:42.106822" level="INFO">Opening url 'https://datatables.net/extensions/select/examples/checkbox/selectPage.html'</msg>
-<arg>url=https://datatables.net/extensions/select/examples/checkbox/selectPage.html</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-05-24T13:50:42.106017" elapsed="3.186349"/>
-</kw>
-<for flavor="IN RANGE">
-<iter>
-<kw name="Get Element Count" owner="SeleniumLibrary">
-<msg time="2025-05-24T13:50:45.347659" level="INFO">${row_count} = 1</msg>
+<kw name="Row Count" owner="DatabaseLibrary">
+<msg time="2025-05-26T13:25:53.559201" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;select * from Product&lt;/code&gt;</msg>
+<msg time="2025-05-26T13:25:54.054323" level="INFO">Error occurred: (1146, "Table 'dbfree_db.Product' doesn't exist")</msg>
+<msg time="2025-05-26T13:25:54.054516" level="INFO">Rollback the transaction</msg>
+<msg time="2025-05-26T13:25:54.246220" level="FAIL">ProgrammingError: (1146, "Table 'dbfree_db.Product' doesn't exist")</msg>
 <var>${row_count}</var>
-<arg>xpath=//table[@id='example']/tbody/tr</arg>
-<doc>Returns the number of elements matching ``locator``.</doc>
-<status status="PASS" start="2025-05-24T13:50:45.302228" elapsed="0.045629"/>
-</kw>
-<for flavor="IN RANGE">
-<iter>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-05-24T13:50:45.618736" level="INFO">${name} = Tiger Nixon</msg>
-<var>${name}</var>
-<arg>xpath=//table[@id='example']/tbody/tr[${i}]/td[2]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-24T13:50:45.348645" elapsed="0.270690"/>
+<arg>select * from Product</arg>
+<doc>Runs a query with the ``select_statement`` and returns the number of rows in the result.</doc>
+<status status="FAIL" start="2025-05-26T13:25:53.558842" elapsed="0.692181">ProgrammingError: (1146, "Table 'dbfree_db.Product' doesn't exist")</status>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${name}</arg>
+<arg>${row_count}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-05-24T13:50:45.619942" elapsed="0.001095"/>
+<status status="NOT RUN" start="2025-05-26T13:25:54.251549" elapsed="0.000211"/>
 </kw>
-<var name="${i}">1</var>
-<status status="PASS" start="2025-05-24T13:50:45.348434" elapsed="0.273039"/>
-</iter>
-<var>${i}</var>
-<value>1</value>
-<value>${row_count}+1</value>
-<status status="PASS" start="2025-05-24T13:50:45.348044" elapsed="0.273778"/>
-</for>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-24T13:50:45.623628" level="INFO">Clicking element 'css=[aria-label="Last"]'.</msg>
-<msg time="2025-05-24T13:50:47.152297" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-05-24T13:50:47.152778" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="dt-paging-button last" role="link" type="button" aria-controls="example" aria-label="Last" data-dt-idx="last"&gt;...&lt;/button&gt; is not clickable at point (1155, 361). Other element would receive the click: &lt;div class="js" style="display: block;"&gt;...&lt;/div&gt;
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF77BD2CF45+75717]
-	GetHandleVerifier [0x00007FF77BD2CFA0+75808]
-	(No symbol) [0x00007FF77BAF8F9A]
-	(No symbol) [0x00007FF77BB57439]
-	(No symbol) [0x00007FF77BB54DF2]
-	(No symbol) [0x00007FF77BB51EA1]
-	(No symbol) [0x00007FF77BB50DA1]
-	(No symbol) [0x00007FF77BB42394]
-	(No symbol) [0x00007FF77BB7737A]
-	(No symbol) [0x00007FF77BB41C46]
-	(No symbol) [0x00007FF77BB77590]
-	(No symbol) [0x00007FF77BB9F39C]
-	(No symbol) [0x00007FF77BB77153]
-	(No symbol) [0x00007FF77BB40421]
-	(No symbol) [0x00007FF77BB411B3]
-	GetHandleVerifier [0x00007FF77C02D71D+3223453]
-	GetHandleVerifier [0x00007FF77C027CC2+3200322]
-	GetHandleVerifier [0x00007FF77C045AF3+3322739]
-	GetHandleVerifier [0x00007FF77BD46A1A+180890]
-	GetHandleVerifier [0x00007FF77BD4E11F+211359]
-	GetHandleVerifier [0x00007FF77BD35294+109332]
-	GetHandleVerifier [0x00007FF77BD35442+109762]
-	GetHandleVerifier [0x00007FF77BD1BA59+4825]
-	BaseThreadInitThunk [0x00007FFE0739E8D7+23]
-	RtlUserThreadStart [0x00007FFE087FC5DC+44]
-</msg>
-<arg>css=[aria-label="Last"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2025-05-24T13:50:45.622676" elapsed="1.536877">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="dt-paging-button last" role="link" type="button" aria-controls="example" aria-label="Last" data-dt-idx="last"&gt;...&lt;/button&gt; is not clickable at point (1155, 361). Other element would receive the click: &lt;div class="js" style="display: block;"&gt;...&lt;/div&gt;
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF77BD2CF45+75717]
-	GetHandleVerifier [0x00007FF77BD2CFA0+75808]
-	(No symbol) [0x00007FF77BAF8F9A]
-	(No symbol) [0x00007FF77BB57439]
-	(No symbol) [0x00007FF77BB54DF2]
-	(No symbol) [0x00007FF77BB51EA1]
-	(No symbol) [0x00007FF77BB50DA1]
-	(No symbol) [0x00007FF77BB42394]
-	(No symbol) [0x00007FF77BB7737A]
-	(No symbol) [0x00007FF77BB41C46]
-	(No symbol) [0x00007FF77BB77590]
-	(No symbol) [0x00007FF77BB9F39C]
-	(No symbol) [0x00007FF77BB77153]
-	(No symbol) [0x00007FF77BB40421]
-	(No symbol) [0x00007FF77BB411B3]
-	GetHandleVerifier [0x00007FF77C02D71D+3223453]
-	GetHandleVerifier [0x00007FF77C027CC2+3200322]
-	GetHandleVerifier [0x00007FF77C045AF3+3322739]
-	GetHandleVerifier [0x00007FF77BD46A1A+180890]
-	GetHandleVerifier [0x00007FF77BD4E11F+211359]
-	GetHandleVerifier [0x00007FF77BD35294+109332]
-	GetHandleVerifier [0x00007FF77BD35442+109762]
-	GetHandleVerifier [0x00007FF77BD1BA59+4825]
-	BaseThreadInitThunk [0x00007FFE0739E8D7+23]
-	RtlUserThreadStart [0x00007FFE087FC5DC+44]
-</status>
+<kw name="Disconnect From Database" owner="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<status status="NOT RUN" start="2025-05-26T13:25:54.252031" elapsed="0.000113"/>
 </kw>
-<var name="${counter}">1</var>
-<status status="FAIL" start="2025-05-24T13:50:45.295165" elapsed="1.864716">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="dt-paging-button last" role="link" type="button" aria-controls="example" aria-label="Last" data-dt-idx="last"&gt;...&lt;/button&gt; is not clickable at point (1155, 361). Other element would receive the click: &lt;div class="js" style="display: block;"&gt;...&lt;/div&gt;
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF77BD2CF45+75717]
-	GetHandleVerifier [0x00007FF77BD2CFA0+75808]
-	(No symbol) [0x00007FF77BAF8F9A]
-	(No symbol) [0x00007FF77BB57439]
-	(No symbol) [0x00007FF77BB54DF2]
-	(No symbol) [0x00007FF77BB51EA1]
-	(No symbol) [0x00007FF77BB50DA1]
-	(No symbol) [0x00007FF77BB42394]
-	(No symbol) [0x00007FF77BB7737A]
-	(No symbol) [0x00007FF77BB41C46]
-	(No symbol) [0x00007FF77BB77590]
-	(No symbol) [0x00007FF77BB9F39C]
-	(No symbol) [0x00007FF77BB77153]
-	(No symbol) [0x00007FF77BB40421]
-	(No symbol) [0x00007FF77BB411B3]
-	GetHandleVerifier [0x00007FF77C02D71D+3223453]
-	GetHandleVerifier [0x00007FF77C027CC2+3200322]
-	GetHandleVerifier [0x00007FF77C045AF3+3322739]
-	GetHandleVerifier [0x00007FF77BD46A1A+180890]
-	GetHandleVerifier [0x00007FF77BD4E11F+211359]
-	GetHandleVerifier [0x00007FF77BD35294+109332]
-	GetHandleVerifier [0x00007FF77BD35442+109762]
-	GetHandleVerifier [0x00007FF77BD1BA59+4825]
-	BaseThreadInitThunk [0x00007FFE0739E8D7+23]
-	RtlUserThreadStart [0x00007FFE087FC5DC+44]
-</status>
-</iter>
-<var>${counter}</var>
-<value>1</value>
-<value>10</value>
-<status status="FAIL" start="2025-05-24T13:50:45.292889" elapsed="1.867250">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="dt-paging-button last" role="link" type="button" aria-controls="example" aria-label="Last" data-dt-idx="last"&gt;...&lt;/button&gt; is not clickable at point (1155, 361). Other element would receive the click: &lt;div class="js" style="display: block;"&gt;...&lt;/div&gt;
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF77BD2CF45+75717]
-	GetHandleVerifier [0x00007FF77BD2CFA0+75808]
-	(No symbol) [0x00007FF77BAF8F9A]
-	(No symbol) [0x00007FF77BB57439]
-	(No symbol) [0x00007FF77BB54DF2]
-	(No symbol) [0x00007FF77BB51EA1]
-	(No symbol) [0x00007FF77BB50DA1]
-	(No symbol) [0x00007FF77BB42394]
-	(No symbol) [0x00007FF77BB7737A]
-	(No symbol) [0x00007FF77BB41C46]
-	(No symbol) [0x00007FF77BB77590]
-	(No symbol) [0x00007FF77BB9F39C]
-	(No symbol) [0x00007FF77BB77153]
-	(No symbol) [0x00007FF77BB40421]
-	(No symbol) [0x00007FF77BB411B3]
-	GetHandleVerifier [0x00007FF77C02D71D+3223453]
-	GetHandleVerifier [0x00007FF77C027CC2+3200322]
-	GetHandleVerifier [0x00007FF77C045AF3+3322739]
-	GetHandleVerifier [0x00007FF77BD46A1A+180890]
-	GetHandleVerifier [0x00007FF77BD4E11F+211359]
-	GetHandleVerifier [0x00007FF77BD35294+109332]
-	GetHandleVerifier [0x00007FF77BD35442+109762]
-	GetHandleVerifier [0x00007FF77BD1BA59+4825]
-	BaseThreadInitThunk [0x00007FFE0739E8D7+23]
-	RtlUserThreadStart [0x00007FFE087FC5DC+44]
-</status>
-</for>
-<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
-<kw name="Log Title" owner="SeleniumLibrary">
-<msg time="2025-05-24T13:50:47.168388" level="INFO">DataTables example - Current page selection only</msg>
-<doc>Logs and returns the title of the current page.</doc>
-<status status="PASS" start="2025-05-24T13:50:47.161567" elapsed="0.007015"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-24T13:50:47.168773" elapsed="2.777257"/>
-</kw>
-<arg>Log Title</arg>
-<arg>AND</arg>
-<arg>Close Browser</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2025-05-24T13:50:47.161026" elapsed="2.785786"/>
-</kw>
-<status status="FAIL" start="2025-05-24T13:50:40.030494" elapsed="9.917083">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="dt-paging-button last" role="link" type="button" aria-controls="example" aria-label="Last" data-dt-idx="last"&gt;...&lt;/button&gt; is not clickable at point (1155, 361). Other element would receive the click: &lt;div class="js" style="display: block;"&gt;...&lt;/div&gt;
-  (Session info: chrome=136.0.7103.114)
-Stacktrace:
-	GetHandleVerifier [0x00007FF77BD2CF45+75717]
-	GetHandleVerifier [0x00007FF77BD2CFA0+75808]
-	(No symbol) [0x00007FF77BAF8F9A]
-	(No symbol) [0x00007FF77BB57439]
-	(No symbol) [0x00007FF77BB54DF2]
-	(No symbol) [0x00007FF77BB51EA1]
-	(No symbol) [0x00007FF77BB50DA1]
-	(No symbol) [0x00007FF77BB42394]
-	(No symbol) [0x00007FF77BB7737A]
-	(No symbol) [0x00007FF77BB41C46]
-	(No symbol) [0x00007FF77BB77590]
-	(No symbol) [0x00007FF77BB9F39C]
-	(No symbol) [0x00007FF77BB77153]
-	(No symbol) [0x00007FF77BB40421]
-	(No symbol) [0x00007FF77BB411B3]
-	GetHandleVerifier [0x00007FF77C02D71D+3223453]
-	GetHandleVerifier [0x00007FF77C027CC2+3200322]
-	GetHandleVerifier [0x00007FF77C045AF3+3322739]
-	GetHandleVerifier [0x00007FF77BD46A1A+180890]
-	GetHandleVerifier [0x00007FF77BD4E11F+211359]
-	GetHandleVerifier [0x00007FF77BD35294+109332]
-	GetHandleVerifier [0x00007FF77BD35442+109762]
-	GetHandleVerifier [0x00007FF77BD1BA59+4825]
-	BaseThreadInitThunk [0x00007FFE0739E8D7+23]
-	RtlUserThreadStart [0x00007FFE087FC5DC+44]
-</status>
+<status status="FAIL" start="2025-05-26T13:25:51.873374" elapsed="2.379024">ProgrammingError: (1146, "Table 'dbfree_db.Product' doesn't exist")</status>
 </test>
-<status status="FAIL" start="2025-05-24T13:50:38.978445" elapsed="10.973195"/>
+<status status="FAIL" start="2025-05-26T13:25:51.812042" elapsed="2.441117"/>
 </suite>
 <statistics>
 <total>
@@ -237,9 +59,15 @@ Stacktrace:
 <tag>
 </tag>
 <suite>
-<stat name="Demo8 Tables Suite" id="s1" pass="0" fail="1" skip="0">Demo8 Tables Suite</stat>
+<stat name="Demo12 Db Suite" id="s1" pass="0" fail="1" skip="0">Demo12 Db Suite</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-05-26T13:25:51.875665" level="WARN">Argument 'dbapiModuleName' is deprecated, use 'db_module' instead</msg>
+<msg time="2025-05-26T13:25:51.879839" level="WARN">Argument 'dbName' is deprecated, use 'db_name' instead</msg>
+<msg time="2025-05-26T13:25:51.882871" level="WARN">Argument 'dbUsername' is deprecated, use 'db_user' instead</msg>
+<msg time="2025-05-26T13:25:51.885404" level="WARN">Argument 'dbPassword' is deprecated, use 'db_password' instead</msg>
+<msg time="2025-05-26T13:25:51.886842" level="WARN">Argument 'dbHost' is deprecated, use 'db_host' instead</msg>
+<msg time="2025-05-26T13:25:51.887208" level="WARN">Argument 'dbPort' is deprecated, use 'db_port' instead</msg>
 </errors>
 </robot>

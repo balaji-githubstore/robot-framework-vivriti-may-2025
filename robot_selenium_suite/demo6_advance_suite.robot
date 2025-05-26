@@ -78,3 +78,20 @@ TC7 Not required
     ${ele1}   Get WebElement    xpath=//input[@name='dateDeparture']
     ${ele2}   Get WebElement    xpath=//input[@name='dateReturn']
     Execute Javascript  arguments[0].value='30 Jul 2025';arguments[1].value='30 Jul 2025';    ARGUMENTS    ${ele1}   ${ele2}
+
+TC4 Javascript
+    Open Browser    browser=chrome  options=add_argument("start-maximized");add_argument("--disable-notifications");
+#    Maximize Browser Window
+    Set Selenium Implicit Wait    30s
+    Go To    url=https://www.malaysiaairlines.com/us/en/home.html
+    #approach 1
+#    Input Text    name=dateDeparture    03 Jun 2025
+    #approach 2 - automate calendar
+    #approach 3 - use javascript
+    ${ele}  Get WebElement    xpath=//input[@name='dateDeparture']
+    Assign Id To Element    xpath=//input[@name='dateDeparture']    departureDate
+    Execute Javascript  document.querySelector("#departureDate").value='30 Jun 2025'
+    Sleep    5s
+
+
+TC7 Validation

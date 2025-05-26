@@ -3,10 +3,11 @@ Library  SeleniumLibrary
 
 *** Test Cases ***
 TC1
-    Open Browser    url=https://www.facebook.com/    browser=chrome
+    Open Browser    url=https://www.facebook.com/    browser=headlesschrome
     ${actual_title}  Get Title
     Log To Console    ${actual_title}
     Should Be Equal As Strings    ${actual_title}     Facebook – log in or sign up
+    [Teardown]  Close Browser
 
 TC2
     Open Browser    url=https://www.facebook.com/    browser=chrome
