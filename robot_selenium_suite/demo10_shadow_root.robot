@@ -5,6 +5,13 @@ Test Teardown     Run Keywords      Log Title      AND      Close Browser
 
 *** Variables ***
 ${CREATE_NEW_ACCOUNT_LOCATOR}   document.querySelector("div[class='login'] > global-login").shadowRoot.querySelector('sign-in-form').shadowRoot.querySelector("a[aria-label='Create an account']")
+*** Keywords ***
+Click Using JavaScript
+    [Arguments]     ${element_locator}      ${timeout}
+    Wait Until Page Contains Element    ${element_locator}      ${timeout}
+    Wait Until Element Is Visible    ${element_locator}      ${timeout}
+    Wait Until Element Is Enabled    ${element_locator}      ${timeout}
+    Click Element    ${element_locator}
 
 *** Test Cases ***
 TC1 
@@ -32,5 +39,6 @@ TC2
 #    Wait Until Page Contains    Royal Caribbean
 #    Wait For Condition    return document.querySelector("div[class='login'] > global-login").shadowRoot.querySelector('sign-in-form').shadowRoot.querySelector("a[aria-label='Create an account']").tagName=="A"
 #    ...  timeout=30s
-    Click Element    dom:${CREATE_NEW_ACCOUNT_LOCATOR}
+    Click Using JavaScript    dom:${CREATE_NEW_ACCOUNT_LOCATOR}     30s
+
 
