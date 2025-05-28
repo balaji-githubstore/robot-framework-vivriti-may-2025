@@ -1,231 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-28T13:20:20.385455" rpa="false" schemaversion="5">
-<suite id="s1" name="Robot Api Suite" source="D:\Balaji\Company\Vivriti\AutomationProject\robot_api_suite">
-<suite id="s1-s1" name="Demo2 Git Api Suite" source="D:\Balaji\Company\Vivriti\AutomationProject\robot_api_suite\demo2_git_api_suite.robot">
-<test id="s1-s1-t1" name="TC1 Get Repo Details" line="21">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-05-28T13:20:21.162034" level="INFO">${repo_name} = repo1</msg>
-<var>${repo_name}</var>
-<arg>repo1</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-05-28T13:20:21.161796" elapsed="0.000281"/>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-21T13:27:21.996871" rpa="false" schemaversion="5">
+<suite id="s1" name="Demo1 Basics Suite" source="D:\Balaji\Company\Viv\AutomationProject\robot_selenium_suite\demo1_basics_suite.robot">
+<test id="s1-t1" name="TC1" line="5">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-21T13:27:22.338507" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<arg>url=https://www.google.com/</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-21T13:27:22.338066" elapsed="2.659306"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-05-28T13:20:21.162577" level="INFO">${git_username} = dbala-cloud</msg>
-<var>${git_username}</var>
-<arg>dbala-cloud</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-05-28T13:20:21.162420" elapsed="0.000187"/>
-</kw>
-<kw name="Create Git Session with Bearer Token">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-05-28T13:20:21.163583" level="INFO">&amp;{header} = { accept=application/vnd.github+json | Authorization=Bearer jjjjjjj }</msg>
-<var>&amp;{header}</var>
-<arg>accept=application/vnd.github+json</arg>
-<arg>Authorization=Bearer ${TOKEN}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-05-28T13:20:21.163247" elapsed="0.000366"/>
-</kw>
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-05-28T13:20:21.163928" level="INFO">Creating Session using : alias=gitapibearer, url=https://api.github.com, headers={'accept': 'application/vnd.github+json', 'Authorization': 'Bearer jjjjjjj'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>alias=gitapibearer</arg>
-<arg>url=https://api.github.com</arg>
-<arg>headers=${header}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-05-28T13:20:21.163716" elapsed="0.000405"/>
-</kw>
-<status status="PASS" start="2025-05-28T13:20:21.162964" elapsed="0.001233"/>
-</kw>
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-05-28T13:20:21.164528" level="WARN">You might have an = symbol in url. You better place 'url=' before, example: 'url=/your-url/foo?param=a' or use '/your-url/foo  params=param=a' or escape it</msg>
-<msg time="2025-05-28T13:20:21.165161" level="FAIL">TypeError: RequestsOnSessionKeywords.get_on_session() missing 1 required positional argument: 'url'</msg>
-<arg>alias=gitapibearer</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="FAIL" start="2025-05-28T13:20:21.164439" elapsed="0.001771">TypeError: RequestsOnSessionKeywords.get_on_session() missing 1 required positional argument: 'url'</status>
-</kw>
-<status status="FAIL" start="2025-05-28T13:20:21.160654" elapsed="0.005932">TypeError: RequestsOnSessionKeywords.get_on_session() missing 1 required positional argument: 'url'</status>
+<status status="PASS" start="2025-05-21T13:27:22.336668" elapsed="2.662623"/>
 </test>
-<status status="FAIL" start="2025-05-28T13:20:20.419804" elapsed="0.748116"/>
-</suite>
-<suite id="s1-s2" name="Demo3 Git New" source="D:\Balaji\Company\Vivriti\AutomationProject\robot_api_suite\demo3_git_new.robot">
-<kw name="Create Git Session with Bearer Token" type="SETUP">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-05-28T13:20:21.177604" level="INFO">&amp;{header} = { accept=application/vnd.github+json | Authorization=Bearer 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 }</msg>
-<var>&amp;{header}</var>
-<arg>accept=application/vnd.github+json</arg>
-<arg>Authorization=Bearer ${TOKEN}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-05-28T13:20:21.177066" elapsed="0.000592"/>
-</kw>
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-05-28T13:20:21.178055" level="INFO">Creating Session using : alias=gitapibearer, url=https://api.github.com, headers={'accept': 'application/vnd.github+json', 'Authorization': 'Bearer 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'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>alias=gitapibearer</arg>
-<arg>url=https://api.github.com</arg>
-<arg>headers=${header}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-05-28T13:20:21.177819" elapsed="0.000526"/>
-</kw>
-<status status="PASS" start="2025-05-28T13:20:21.176623" elapsed="0.001931"/>
-</kw>
-<test id="s1-s2-t1" name="TC1 Get Repo Details" line="18">
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-05-28T13:20:21.928897" level="INFO">GET Request : url=https://api.github.com/repos/dbala-cloud/repo1 (redirected) 
- path_url=/repos/dbala-cloud/repo1 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/vnd.github+json', 'Connection': 'keep-alive', 'Authorization': 'Bearer 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'} 
- body=None 
- </msg>
-<msg time="2025-05-28T13:20:21.929054" level="INFO">GET Response : url=https://api.github.com/repositories/991758489 
- status=200, reason=OK 
- headers={'Date': 'Wed, 28 May 2025 07:50:21 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'private, max-age=60, s-maxage=60', 'Vary': 'Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With', 'ETag': 'W/"7224fc8ba0340533e7775f17ce1189ba29d0901e9a0c67453271b6c701df8c2d"', 'Last-Modified': 'Wed, 28 May 2025 07:38:58 GMT', 'X-OAuth-Scopes': 'admin:enterprise, admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, admin:ssh_signing_key, audit_log, codespace, copilot, delete:packages, delete_repo, gist, notifications, project, repo, user, workflow, write:discussion, write:network_configurations, write:packages', 'X-Accepted-OAuth-Scopes': 'repo', 'github-authentication-token-expiration': '2025-06-04 05:37:56 UTC', 'X-GitHub-Media-Type': 'github.v3; format=json', 'x-github-api-version-selected': '2022-11-28', 'X-RateLimit-Limit': '5000', 'X-RateLimit-Remaining': '4876', 'X-RateLimit-Reset': '1748418976', 'X-RateLimit-Used': '124', 'X-RateLimit-Resource': 'core', 'Access-Control-Expose-Headers': 'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset', 'Access-Control-Allow-Origin': '*', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains; preload', 'X-Frame-Options': 'deny', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '0', 'Referrer-Policy': 'origin-when-cross-origin, strict-origin-when-cross-origin', 'Content-Security-Policy': "default-src 'none'", 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'Server': 'github.com', 'X-GitHub-Request-Id': 'E8F1:E6749:452901:58548F:6836C03D'} 
- body={"id":991758489,"node_id":"R_kgDOOx0ImQ","name":"zrepos1","full_name":"dbala-cloud/zrepos1","private":true,"owner":{"login":"dbala-cloud","id":213742160,"node_id":"U_kgDODL1yUA","avatar_url":"https://avatars.githubusercontent.com/u/213742160?v=4","gravatar_id":"","url":"https://api.github.com/users/dbala-cloud","html_url":"https://github.com/dbala-cloud","followers_url":"https://api.github.com/users/dbala-cloud/followers","following_url":"https://api.github.com/users/dbala-cloud/following{/other_user}","gists_url":"https://api.github.com/users/dbala-cloud/gists{/gist_id}","starred_url":"https://api.github.com/users/dbala-cloud/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/dbala-cloud/subscriptions","organizations_url":"https://api.github.com/users/dbala-cloud/orgs","repos_url":"https://api.github.com/users/dbala-cloud/repos","events_url":"https://api.github.com/users/dbala-cloud/events{/privacy}","received_events_url":"https://api.github.com/users/dbala-cloud/received_events","type":"User","user_view_type":"public","site_admin":false},"html_url":"https://github.com/dbala-cloud/zrepos1","description":"Demom Sample","fork":false,"url":"https://api.github.com/repos/dbala-cloud/zrepos1","forks_url":"https://api.github.com/repos/dbala-cloud/zrepos1/forks","keys_url":"https://api.github.com/repos/dbala-cloud/zrepos1/keys{/key_id}","collaborators_url":"https://api.github.com/repos/dbala-cloud/zrepos1/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/dbala-cloud/zrepos1/teams","hooks_url":"https://api.github.com/repos/dbala-cloud/zrepos1/hooks","issue_events_url":"https://api.github.com/repos/dbala-cloud/zrepos1/issues/events{/number}","events_url":"https://api.github.com/repos/dbala-cloud/zrepos1/events","assignees_url":"https://api.github.com/repos/dbala-cloud/zrepos1/assignees{/user}","branches_url":"https://api.github.com/repos/dbala-cloud/zrepos1/branches{/branch}","tags_url":"https://api.github.com/repos/dbala-cloud/zrepos1/tags","blobs_url":"https://api.github.com/repos/dbala-cloud/zrepos1/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/dbala-cloud/zrepos1/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/dbala-cloud/zrepos1/git/refs{/sha}","trees_url":"https://api.github.com/repos/dbala-cloud/zrepos1/git/trees{/sha}","statuses_url":"https://api.github.com/repos/dbala-cloud/zrepos1/statuses/{sha}","languages_url":"https://api.github.com/repos/dbala-cloud/zrepos1/languages","stargazers_url":"https://api.github.com/repos/dbala-cloud/zrepos1/stargazers","contributors_url":"https://api.github.com/repos/dbala-cloud/zrepos1/contributors","subscribers_url":"https://api.github.com/repos/dbala-cloud/zrepos1/subscribers","subscription_url":"https://api.github.com/repos/dbala-cloud/zrepos1/subscription","commits_url":"https://api.github.com/repos/dbala-cloud/zrepos1/commits{/sha}","git_commits_url":"https://api.github.com/repos/dbala-cloud/zrepos1/git/commits{/sha}","comments_url":"https://api.github.com/repos/dbala-cloud/zrepos1/comments{/number}","issue_comment_url":"https://api.github.com/repos/dbala-cloud/zrepos1/issues/comments{/number}","contents_url":"https://api.github.com/repos/dbala-cloud/zrepos1/contents/{+path}","compare_url":"https://api.github.com/repos/dbala-cloud/zrepos1/compare/{base}...{head}","merges_url":"https://api.github.com/repos/dbala-cloud/zrepos1/merges","archive_url":"https://api.github.com/repos/dbala-cloud/zrepos1/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/dbala-cloud/zrepos1/downloads","issues_url":"https://api.github.com/repos/dbala-cloud/zrepos1/issues{/number}","pulls_url":"https://api.github.com/repos/dbala-cloud/zrepos1/pulls{/number}","milestones_url":"https://api.github.com/repos/dbala-cloud/zrepos1/milestones{/number}","notifications_url":"https://api.github.com/repos/dbala-cloud/zrepos1/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/dbala-cloud/zrepos1/labels{/name}","releases_url":"https://api.github.com/repos/dbala-cloud/zrepos1/releases{/id}","deployments_url":"https://api.github.com/repos/dbala-cloud/zrepos1/deployments","created_at":"2025-05-28T05:36:36Z","updated_at":"2025-05-28T07:38:58Z","pushed_at":"2025-05-28T05:36:36Z","git_url":"git://github.com/dbala-cloud/zrepos1.git","ssh_url":"git@github.com:dbala-cloud/zrepos1.git","clone_url":"https://github.com/dbala-cloud/zrepos1.git","svn_url":"https://github.com/dbala-cloud/zrepos1","homepage":"https://github.com","size":0,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":false,"has_pages":false,"has_discussions":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":0,"license":null,"allow_forking":true,"is_template":false,"web_commit_signoff_required":false,"topics":[],"visibility":"private","forks":0,"open_issues":0,"watchers":0,"default_branch":"main","permissions":{"admin":true,"maintain":true,"push":true,"triage":true,"pull":true},"temp_clone_token":"BS6XEUBRHNS5FEVBF2G743DIG3AWS","allow_squash_merge":true,"allow_merge_commit":true,"allow_rebase_merge":true,"allow_auto_merge":false,"delete_branch_on_merge":false,"allow_update_branch":false,"use_squash_pr_title_as_default":false,"squash_merge_commit_message":"COMMIT_MESSAGES","squash_merge_commit_title":"COMMIT_OR_PR_TITLE","merge_commit_message":"PR_TITLE","merge_commit_title":"MERGE_MESSAGE","network_count":0,"subscribers_count":0} 
- </msg>
-<msg time="2025-05-28T13:20:21.929271" level="INFO">C:\Program Files\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.github.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(
-C:\Program Files\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.github.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2025-05-28T13:20:21.929923" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>alias=gitapibearer</arg>
-<arg>url=/repos/${GIT_USERNAME}/repo1</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-05-28T13:20:21.179354" elapsed="0.750635"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-05-28T13:20:21.931190" level="INFO">True</msg>
-<arg>${response.json()}[private]</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-05-28T13:20:21.930379" elapsed="0.000872"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-05-28T13:20:21.932291" level="INFO">True</msg>
-<arg>${response.json()['private']}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-05-28T13:20:21.931545" elapsed="0.000805"/>
-</kw>
-<kw name="Should Not Be True" owner="BuiltIn">
-<msg time="2025-05-28T13:20:21.933148" level="FAIL">'True' should not be true.</msg>
-<arg>${response.json()['private']}</arg>
-<doc>Fails if the given condition is true.</doc>
-<status status="FAIL" start="2025-05-28T13:20:21.932650" elapsed="0.000583">'True' should not be true.</status>
-</kw>
-<status status="FAIL" start="2025-05-28T13:20:21.178698" elapsed="0.754845">'True' should not be true.</status>
-</test>
-<test id="s1-s2-t2" name="TC2 Update Git Details" line="26">
-<kw name="Get File For Streaming Upload" owner="RequestsLibrary">
-<msg time="2025-05-28T13:20:21.935286" level="INFO">${body} = &lt;_io.BufferedReader name='D:\\Balaji\\Company\\Vivriti\\AutomationProject\\files\\repo_update.json'&gt;</msg>
-<var>${body}</var>
-<arg>path=${EXECDIR}${/}files${/}repo_update.json</arg>
-<doc>Opens and returns a file descriptor of a specified file to be passed as ``data`` parameter
-to other requests keywords.</doc>
-<status status="PASS" start="2025-05-28T13:20:21.934941" elapsed="0.000377"/>
-</kw>
-<kw name="PATCH On Session" owner="RequestsLibrary">
-<msg time="2025-05-28T13:20:22.623252" level="INFO">PATCH Request : url=https://api.github.com/repos/dbala-cloud/repo1 (redirected) 
- path_url=/repos/dbala-cloud/repo1 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/vnd.github+json', 'Connection': 'keep-alive', 'Authorization': 'Bearer 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', 'Content-Length': '49'} 
- body=&lt;_io.BufferedReader name='D:\\Balaji\\Company\\Vivriti\\AutomationProject\\files\\repo_update.json'&gt; 
- </msg>
-<msg time="2025-05-28T13:20:22.623366" level="INFO">PATCH Response : url=https://api.github.com/repositories/991758489 
- status=200, reason=OK 
- headers={'Date': 'Wed, 28 May 2025 07:50:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'private, max-age=60, s-maxage=60', 'Vary': 'Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With', 'ETag': 'W/"46102ec07d6ba788341282a555b1fd652633b7a9da1317c8d40d263dc2f98c8a"', 'X-OAuth-Scopes': 'admin:enterprise, admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, admin:ssh_signing_key, audit_log, codespace, copilot, delete:packages, delete_repo, gist, notifications, project, repo, user, workflow, write:discussion, write:network_configurations, write:packages', 'X-Accepted-OAuth-Scopes': '', 'github-authentication-token-expiration': '2025-06-04 05:37:56 UTC', 'X-GitHub-Media-Type': 'github.v3; format=json', 'x-github-api-version-selected': '2022-11-28', 'X-RateLimit-Limit': '5000', 'X-RateLimit-Remaining': '4874', 'X-RateLimit-Reset': '1748418976', 'X-RateLimit-Used': '126', 'X-RateLimit-Resource': 'core', 'Access-Control-Expose-Headers': 'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset', 'Access-Control-Allow-Origin': '*', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains; preload', 'X-Frame-Options': 'deny', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '0', 'Referrer-Policy': 'origin-when-cross-origin, strict-origin-when-cross-origin', 'Content-Security-Policy': "default-src 'none'", 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'Server': 'github.com', 'X-GitHub-Request-Id': 'E8F1:E6749:45296A:585505:6836C03E'} 
- body={"id":991758489,"node_id":"R_kgDOOx0ImQ","name":"zrepos1","full_name":"dbala-cloud/zrepos1","private":true,"owner":{"login":"dbala-cloud","id":213742160,"node_id":"U_kgDODL1yUA","avatar_url":"https://avatars.githubusercontent.com/u/213742160?v=4","gravatar_id":"","url":"https://api.github.com/users/dbala-cloud","html_url":"https://github.com/dbala-cloud","followers_url":"https://api.github.com/users/dbala-cloud/followers","following_url":"https://api.github.com/users/dbala-cloud/following{/other_user}","gists_url":"https://api.github.com/users/dbala-cloud/gists{/gist_id}","starred_url":"https://api.github.com/users/dbala-cloud/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/dbala-cloud/subscriptions","organizations_url":"https://api.github.com/users/dbala-cloud/orgs","repos_url":"https://api.github.com/users/dbala-cloud/repos","events_url":"https://api.github.com/users/dbala-cloud/events{/privacy}","received_events_url":"https://api.github.com/users/dbala-cloud/received_events","type":"User","user_view_type":"public","site_admin":false},"html_url":"https://github.com/dbala-cloud/zrepos1","description":"Demom Sample","fork":false,"url":"https://api.github.com/repos/dbala-cloud/zrepos1","forks_url":"https://api.github.com/repos/dbala-cloud/zrepos1/forks","keys_url":"https://api.github.com/repos/dbala-cloud/zrepos1/keys{/key_id}","collaborators_url":"https://api.github.com/repos/dbala-cloud/zrepos1/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/dbala-cloud/zrepos1/teams","hooks_url":"https://api.github.com/repos/dbala-cloud/zrepos1/hooks","issue_events_url":"https://api.github.com/repos/dbala-cloud/zrepos1/issues/events{/number}","events_url":"https://api.github.com/repos/dbala-cloud/zrepos1/events","assignees_url":"https://api.github.com/repos/dbala-cloud/zrepos1/assignees{/user}","branches_url":"https://api.github.com/repos/dbala-cloud/zrepos1/branches{/branch}","tags_url":"https://api.github.com/repos/dbala-cloud/zrepos1/tags","blobs_url":"https://api.github.com/repos/dbala-cloud/zrepos1/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/dbala-cloud/zrepos1/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/dbala-cloud/zrepos1/git/refs{/sha}","trees_url":"https://api.github.com/repos/dbala-cloud/zrepos1/git/trees{/sha}","statuses_url":"https://api.github.com/repos/dbala-cloud/zrepos1/statuses/{sha}","languages_url":"https://api.github.com/repos/dbala-cloud/zrepos1/languages","stargazers_url":"https://api.github.com/repos/dbala-cloud/zrepos1/stargazers","contributors_url":"https://api.github.com/repos/dbala-cloud/zrepos1/contributors","subscribers_url":"https://api.github.com/repos/dbala-cloud/zrepos1/subscribers","subscription_url":"https://api.github.com/repos/dbala-cloud/zrepos1/subscription","commits_url":"https://api.github.com/repos/dbala-cloud/zrepos1/commits{/sha}","git_commits_url":"https://api.github.com/repos/dbala-cloud/zrepos1/git/commits{/sha}","comments_url":"https://api.github.com/repos/dbala-cloud/zrepos1/comments{/number}","issue_comment_url":"https://api.github.com/repos/dbala-cloud/zrepos1/issues/comments{/number}","contents_url":"https://api.github.com/repos/dbala-cloud/zrepos1/contents/{+path}","compare_url":"https://api.github.com/repos/dbala-cloud/zrepos1/compare/{base}...{head}","merges_url":"https://api.github.com/repos/dbala-cloud/zrepos1/merges","archive_url":"https://api.github.com/repos/dbala-cloud/zrepos1/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/dbala-cloud/zrepos1/downloads","issues_url":"https://api.github.com/repos/dbala-cloud/zrepos1/issues{/number}","pulls_url":"https://api.github.com/repos/dbala-cloud/zrepos1/pulls{/number}","milestones_url":"https://api.github.com/repos/dbala-cloud/zrepos1/milestones{/number}","notifications_url":"https://api.github.com/repos/dbala-cloud/zrepos1/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/dbala-cloud/zrepos1/labels{/name}","releases_url":"https://api.github.com/repos/dbala-cloud/zrepos1/releases{/id}","deployments_url":"https://api.github.com/repos/dbala-cloud/zrepos1/deployments","created_at":"2025-05-28T05:36:36Z","updated_at":"2025-05-28T07:38:58Z","pushed_at":"2025-05-28T05:36:36Z","git_url":"git://github.com/dbala-cloud/zrepos1.git","ssh_url":"git@github.com:dbala-cloud/zrepos1.git","clone_url":"https://github.com/dbala-cloud/zrepos1.git","svn_url":"https://github.com/dbala-cloud/zrepos1","homepage":"https://github.com","size":0,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":false,"has_pages":false,"has_discussions":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":0,"license":null,"allow_forking":true,"is_template":false,"web_commit_signoff_required":false,"topics":[],"visibility":"private","forks":0,"open_issues":0,"watchers":0,"default_branch":"main","permissions":{"admin":true,"maintain":true,"push":true,"triage":true,"pull":true},"allow_squash_merge":true,"allow_merge_commit":true,"allow_rebase_merge":true,"allow_auto_merge":false,"delete_branch_on_merge":false,"allow_update_branch":false,"use_squash_pr_title_as_default":false,"squash_merge_commit_message":"COMMIT_MESSAGES","squash_merge_commit_title":"COMMIT_OR_PR_TITLE","merge_commit_message":"PR_TITLE","merge_commit_title":"MERGE_MESSAGE","security_and_analysis":{"secret_scanning":{"status":"disabled"},"secret_scanning_push_protection":{"status":"disabled"},"dependabot_security_updates":{"status":"disabled"},"secret_scanning_non_provider_patterns":{"status":"disabled"},"secret_scanning_validity_checks":{"status":"disabled"}},"network_count":0,"subscribers_count":0} 
- </msg>
-<msg time="2025-05-28T13:20:22.623603" level="INFO">C:\Program Files\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.github.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(
-C:\Program Files\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.github.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2025-05-28T13:20:22.623957" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>alias=gitapibearer</arg>
-<arg>url=/repos/${GIT_USERNAME}/repo1</arg>
-<arg>data=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a PATCH request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-05-28T13:20:21.935570" elapsed="0.688420"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2025-05-28T13:20:22.624256" elapsed="0.000201"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-05-28T13:20:22.624810" level="INFO">&lt;Response [200]&gt;</msg>
-<arg>${response}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-05-28T13:20:22.624650" elapsed="0.000241"/>
-</kw>
-<status status="PASS" start="2025-05-28T13:20:21.934503" elapsed="0.690694"/>
-</test>
-<test id="s1-s2-t3" name="TC2 Update Git Details" line="33">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-05-28T13:20:22.627041" level="INFO">&amp;{body} = { name="repo3" | private=True }</msg>
-<var>&amp;{body}</var>
-<arg>name="repo3"</arg>
-<arg>private=${True}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-05-28T13:20:22.626621" elapsed="0.000465"/>
-</kw>
-<kw name="PATCH On Session" owner="RequestsLibrary">
-<msg time="2025-05-28T13:20:23.176331" level="INFO">PATCH Request : url=https://api.github.com/repos/dbala-cloud/repo1 (redirected) 
- path_url=/repos/dbala-cloud/repo1 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/vnd.github+json', 'Connection': 'keep-alive', 'Authorization': 'Bearer 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', 'Content-Length': '29', 'Content-Type': 'application/x-www-form-urlencoded'} 
- body=name=%22repo3%22&amp;private=True 
- </msg>
-<msg time="2025-05-28T13:20:23.176441" level="INFO">PATCH Response : url=https://api.github.com/repositories/991758489 
- status=400, reason=Bad Request 
- headers={'Date': 'Wed, 28 May 2025 07:50:23 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '133', 'X-OAuth-Scopes': 'admin:enterprise, admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, admin:ssh_signing_key, audit_log, codespace, copilot, delete:packages, delete_repo, gist, notifications, project, repo, user, workflow, write:discussion, write:network_configurations, write:packages', 'X-Accepted-OAuth-Scopes': 'repo', 'github-authentication-token-expiration': '2025-06-04 05:37:56 UTC', 'X-GitHub-Media-Type': 'github.v3; format=json', 'x-github-api-version-selected': '2022-11-28', 'X-RateLimit-Limit': '5000', 'X-RateLimit-Remaining': '4872', 'X-RateLimit-Reset': '1748418976', 'X-RateLimit-Used': '128', 'X-RateLimit-Resource': 'core', 'Access-Control-Expose-Headers': 'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset', 'Access-Control-Allow-Origin': '*', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains; preload', 'X-Frame-Options': 'deny', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '0', 'Referrer-Policy': 'origin-when-cross-origin, strict-origin-when-cross-origin', 'Content-Security-Policy': "default-src 'none'", 'Vary': 'Accept-Encoding, Accept, X-Requested-With', 'Server': 'github.com', 'X-GitHub-Request-Id': 'E8F1:E6749:4529DB:58559D:6836C03F'} 
- body={"message":"Problems parsing JSON","documentation_url":"https://docs.github.com/rest/repos/repos#update-a-repository","status":"400"} 
- </msg>
-<msg time="2025-05-28T13:20:23.176583" level="INFO">C:\Program Files\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.github.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(
-C:\Program Files\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.github.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2025-05-28T13:20:23.177131" level="INFO">${response} = &lt;Response [400]&gt;</msg>
-<var>${response}</var>
-<arg>alias=gitapibearer</arg>
-<arg>url=/repos/${GIT_USERNAME}/repo1</arg>
-<arg>data=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a PATCH request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-05-28T13:20:22.627389" elapsed="0.549921"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<msg time="2025-05-28T13:20:23.178221" level="FAIL">Url: https://api.github.com/repositories/991758489 Expected status: 400 != 200</msg>
-<arg>200</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="FAIL" start="2025-05-28T13:20:23.177790" elapsed="0.002840">Url: https://api.github.com/repositories/991758489 Expected status: 400 != 200</status>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>${response}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-05-28T13:20:23.181008" elapsed="0.000032"/>
-</kw>
-<status status="FAIL" start="2025-05-28T13:20:22.625951" elapsed="0.555408">Url: https://api.github.com/repositories/991758489 Expected status: 400 != 200</status>
-</test>
-<kw name="Delete All Sessions" owner="RequestsLibrary" type="TEARDOWN">
-<msg time="2025-05-28T13:20:23.182652" level="INFO">Deleting All Sessions</msg>
-<doc>Removes all the session objects</doc>
-<status status="PASS" start="2025-05-28T13:20:23.182539" elapsed="0.000219"/>
-</kw>
-<status status="FAIL" start="2025-05-28T13:20:21.169367" elapsed="2.013437"/>
-</suite>
-<status status="FAIL" start="2025-05-28T13:20:20.386777" elapsed="2.797426"/>
+<status status="PASS" start="2025-05-21T13:27:21.998271" elapsed="3.003129"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="3" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Robot Api Suite" id="s1" pass="1" fail="3" skip="0">Robot Api Suite</stat>
-<stat name="Demo2 Git Api Suite" id="s1-s1" pass="0" fail="1" skip="0">Robot Api Suite.Demo2 Git Api Suite</stat>
-<stat name="Demo3 Git New" id="s1-s2" pass="1" fail="2" skip="0">Robot Api Suite.Demo3 Git New</stat>
+<stat name="Demo1 Basics Suite" id="s1" pass="1" fail="0" skip="0">Demo1 Basics Suite</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-05-28T13:20:21.164528" level="WARN">You might have an = symbol in url. You better place 'url=' before, example: 'url=/your-url/foo?param=a' or use '/your-url/foo  params=param=a' or escape it</msg>
-<msg time="2025-05-28T13:20:22.626033" level="WARN">Multiple tests with name 'TC2 Update Git Details' executed in suite 'Robot Api Suite.Demo3 Git New'.</msg>
 </errors>
 </robot>

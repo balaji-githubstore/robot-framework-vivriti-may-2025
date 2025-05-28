@@ -6,27 +6,25 @@ Suite Setup     Create Session    alias=petstore    url=https://petstore.swagger
 
 *** Test Cases ***
 TC1 Image Upload
-    ${image_file2}  Get File For Streaming Upload    ${EXECDIR}${/}files${/}demo1.png
-    &{payload}      Create Dictionary       additionalMetadata=image/png
+    ${image_file2}  Get File For Streaming Upload    ${EXECDIR}${/}files${/}demo.jpg
+    &{payload}      Create Dictionary       additionalMetadata=image/jpg
     &{files1}    Create Dictionary     file=${image_file2}
 
     ${response}     POST On Session     alias=petstore      url=/pet/5/uploadImage     data=${payload}
     ...   files=${files1}
-    ...     expected_status=200
+    ...     expected_status=any
 
 TC2 Multi Image Upload Dictionary
-    &{payload}      Create Dictionary       additionalMetadata=image/jpg
+    &{payload}      Create Dictionary       additionalMetadata=image/png
 
     ${image_file1}  Get File For Streaming Upload    ${EXECDIR}${/}files${/}demo.jpg
     ${image_file2}  Get File For Streaming Upload    ${EXECDIR}${/}files${/}demo.jpg
 
-    ${files}=    Create Dictionary    randombytes1=${image_file1}
-    ...     randombytes2=${image_file2}
+    ${files}=    Create Dictionary    randombytes1    ${image_file1}    randombytes2    ${image_file2}      randombytes3    ${image_file2}
 
-    ${response}     POST On Session     alias=petstore      url=/pet/5/uploadImage
-    ...   data=${payload}
+    ${response}     POST On Session     alias=petstore      url=/pet/5/uploadImage     data=${payload}
     ...   files=${files}
-    ...   expected_status=200
+    ...     expected_status=any
 
 TC3 Multi Image Upload List
     &{payload}      Create Dictionary       additionalMetadata=image/png

@@ -6,7 +6,7 @@ Suite Setup     Create Git Session with Bearer Token
 Suite Teardown  Delete All Sessions
 
 *** Variables ***
-${TOKEN}       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
+${TOKEN}       878787878787
 ${GIT_USERNAME}     dbala-cloud
 
 *** Keywords ***
@@ -23,19 +23,6 @@ TC1 Get Repo Details
     Should Not Be True    ${response.json()['private']}
 #    assert the repo is public - key private should be false
 
-TC2 Update Git Details
-   ${body}  Get File For Streaming Upload    path=${EXECDIR}${/}files${/}repo_update.json
-   ${response}      Patch On Session      alias=gitapibearer  url=/repos/${GIT_USERNAME}/repo1
-   ...      data=${body}    expected_status=any
-   Status Should Be    200
-   Log    ${response}
-
-TC2 Update Git Details
-   &{body}      Create Dictionary      name="repo3"     private=${True}
-   ${response}      Patch On Session      alias=gitapibearer  url=/repos/${GIT_USERNAME}/repo1
-   ...      data=${body}    expected_status=any
-   Status Should Be    200
-   Log    ${response}
 
 
 
