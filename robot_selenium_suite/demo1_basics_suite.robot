@@ -1,7 +1,5 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library    DatabaseLibrary
-
 
 *** Test Cases ***
 TC1
@@ -40,8 +38,6 @@ TC5_Sign_Up
 #    Select From List By Value    id=month   12
 #    Select From List By Index    id=month   11
     Select From List By Label    id=month   Dec
-
-    Check If Exists In Database     select * from register where firstname=john and lastname=wick
 
 TC2
     Open Browser    url=https://www.medibuddy.in/    browser=chrome
