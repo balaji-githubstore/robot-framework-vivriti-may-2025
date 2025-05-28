@@ -1,18 +1,5 @@
 *** Settings ***
 Library     RequestsLibrary
-Library    Process
-
-Suite Setup     Create Git Session with Bearer Token
-Suite Teardown  Delete All Sessions
-
-*** Variables ***
-${TOKEN}       yyyyyyyyyyyyyyyyyyyyy
-${GIT_USERNAME}     dbala-cloud
-
-*** Keywords ***
-Create Git Session with Bearer Token
-    &{header}     Create Dictionary   accept=application/vnd.github+json    Authorization=Bearer ${TOKEN}
-    Create Session    alias=gitapibearer    url=https://api.github.com   headers=${header}
 
 *** Test Cases ***
 TC1 Get Repo Details
@@ -37,5 +24,16 @@ TC2 Update Git Details
    Status Should Be    200
    Log    ${response}
 
+TC3
+    ${file1}    Get File For Streaming Upload    path=${EXECDIR}${/}files${/}demo1.png
+    ${file2}    Get File For Streaming Upload    path=${EXECDIR}${/}files${/}demo1.png
 
+     ${files}=   Create Dictionary  randombytes1  ${file1}  randombytes2  ${file2}
 
+     ${payload}   Create Dictionary      additionalMetadata=image/png
+
+     Create Session    alias=pet    url=https://petstore.swagger.io/v2
+
+     ${response}    POST On Session    alias=pet    url=pet/10/UploadImage     files=${files}      data=${payload}
+     ...   expected_status=200
+     Log    ${response}
