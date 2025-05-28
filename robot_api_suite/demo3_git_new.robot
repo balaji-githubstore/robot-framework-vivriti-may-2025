@@ -6,7 +6,7 @@ Suite Setup     Create Git Session with Bearer Token
 Suite Teardown  Delete All Sessions
 
 *** Variables ***
-${TOKEN}       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
+${TOKEN}       yyyyyyyyyyyyyyyyyyyyy
 ${GIT_USERNAME}     dbala-cloud
 
 *** Keywords ***
