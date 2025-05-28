@@ -5,7 +5,7 @@ Library     RequestsLibrary
 
 *** Variables ***
 ${GIT_USERNAME}     balaji-githubstore
-${TOKEN}     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
+${TOKEN}     jjjjjjj
 
 
 *** Keywords ***
