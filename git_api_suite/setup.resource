@@ -2,7 +2,7 @@
 Library     RequestsLibrary
 
 *** Variables ***
-${TOKEN}       llllllllllllljk
+${TOKEN}       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
 ${GIT_USERNAME}     dbala-cloud
 
 *** Keywords ***
