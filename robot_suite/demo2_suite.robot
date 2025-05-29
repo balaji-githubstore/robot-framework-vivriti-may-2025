@@ -24,3 +24,8 @@ TC3
 
 
 
+TC5
+   @{numbers}    Create List    4  5   8  44  555
+   FOR    ${number}    IN    @{numbers}
+       Log    ${number}
+   END

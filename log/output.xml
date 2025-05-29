@@ -1,262 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-29T00:41:28.968876" rpa="false" schemaversion="5">
-<suite id="s1" name="Git Api Suite" source="D:\Balaji\Company\Vivriti\AutomationProject\git_api_suite">
-<kw name="Create Git Session with Bearer Token" owner="setup" type="SETUP">
+<robot generator="Robot 7.2.2 (Python 3.10.0 on win32)" generated="2025-05-29T11:13:00.289380" rpa="false" schemaversion="5">
+<suite id="s1" name="Demo3 Req" source="D:\Balaji\Company\Vivriti\AutomationProject\robot_api_suite\demo3_req.robot">
+<test id="s1-t1" name="TC3 List User" line="27">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-05-29T00:41:29.618940" level="INFO">&amp;{header} = { accept=application/vnd.github+json | Authorization=Bearer llllllllllllljk }</msg>
-=======
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-28T11:58:22.785996" rpa="false" schemaversion="5">
-<suite id="s1" name="Demo3 Git New" source="D:\Balaji\Company\Vivriti\AutomationProject\robot_api_suite\demo3_git_new.robot">
-<kw name="Create Git Session with Bearer Token" type="SETUP">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-05-28T11:58:23.677938" level="INFO">&amp;{header} = { accept=application/vnd.github+json | Authorization=Bearer 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 }</msg>
->>>>>>> parent of 5874081 (update code)
+<msg time="2025-05-29T11:13:00.851768" level="INFO">&amp;{header} = { x-api-key=reqres-free-v1 }</msg>
 <var>&amp;{header}</var>
-<arg>accept=application/vnd.github+json</arg>
-<arg>Authorization=Bearer ${TOKEN}</arg>
+<arg>x-api-key=reqres-free-v1</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<<<<<<< HEAD
-<status status="PASS" start="2025-05-29T00:41:29.618411" elapsed="0.002872"/>
+<status status="PASS" start="2025-05-29T11:13:00.851768" elapsed="0.002579"/>
 </kw>
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-05-29T00:41:29.622577" level="INFO">Creating Session using : alias=gitapibearer, url=https://api.github.com, headers={'accept': 'application/vnd.github+json', 'Authorization': 'Bearer llllllllllllljk'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-=======
-<status status="PASS" start="2025-05-28T11:58:23.677034" elapsed="0.002672"/>
-</kw>
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-05-28T11:58:23.680293" level="INFO">Creating Session using : alias=gitapibearer, url=https://api.github.com, headers={'accept': 'application/vnd.github+json', 'Authorization': 'Bearer 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'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
->>>>>>> parent of 5874081 (update code)
-<arg>alias=gitapibearer</arg>
-<arg>url=https://api.github.com</arg>
+<msg time="2025-05-29T11:13:00.855351" level="INFO">Creating Session using : alias=req, url=https://reqres.in, headers={'x-api-key': 'reqres-free-v1'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>alias=req</arg>
+<arg>url=https://reqres.in</arg>
 <arg>headers=${header}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<<<<<<< HEAD
-<status status="PASS" start="2025-05-29T00:41:29.621651" elapsed="0.001285"/>
+<status status="PASS" start="2025-05-29T11:13:00.854347" elapsed="0.001004"/>
 </kw>
-<kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2025-05-29T00:41:29.623427" level="INFO">${GIT_USERNAME} = dbala-cloud</msg>
-<arg>${GIT_USERNAME}</arg>
-<arg>${GIT_USERNAME}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2025-05-29T00:41:29.623138" elapsed="0.000394"/>
-</kw>
-<kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2025-05-29T00:41:29.623903" level="INFO">${TOKEN} = llllllllllllljk</msg>
-<arg>${TOKEN}</arg>
-<arg>${TOKEN}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2025-05-29T00:41:29.623674" elapsed="0.000317"/>
-</kw>
-<status status="PASS" start="2025-05-29T00:41:29.616995" elapsed="0.007107"/>
-</kw>
-<suite id="s1-s1" name="Demo2 Git Api Suite" source="D:\Balaji\Company\Vivriti\AutomationProject\git_api_suite\demo2_git_api_suite.robot">
-<test id="s1-s1-t1" name="TC1 Get Repo Details" line="6">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-05-29T00:41:30.004404" level="INFO">GET Request : url=https://api.github.com/repos/dbala-cloud/Durgaa 
- path_url=/repos/dbala-cloud/Durgaa 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/vnd.github+json', 'Connection': 'keep-alive', 'Authorization': 'Bearer llllllllllllljk'} 
+<msg time="2025-05-29T11:13:00.938985" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-api-key': 'reqres-free-v1'} 
  body=None 
  </msg>
-<msg time="2025-05-29T00:41:30.005276" level="INFO">GET Response : url=https://api.github.com/repos/dbala-cloud/Durgaa 
- status=401, reason=Unauthorized 
- headers={'Date': 'Wed, 28 May 2025 19:11:29 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '95', 'X-GitHub-Media-Type': 'github.v3; format=json', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '59', 'X-RateLimit-Reset': '1748463089', 'X-RateLimit-Used': '1', 'X-RateLimit-Resource': 'core', 'Access-Control-Expose-Headers': 'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset', 'Access-Control-Allow-Origin': '*', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains; preload', 'X-Frame-Options': 'deny', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '0', 'Referrer-Policy': 'origin-when-cross-origin, strict-origin-when-cross-origin', 'Content-Security-Policy': "default-src 'none'", 'Vary': 'Accept-Encoding, Accept, X-Requested-With', 'Server': 'github.com', 'X-GitHub-Request-Id': 'F995:70382:171B72:1D05AE:68375FE1'} 
- body={"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"} 
- </msg>
-<msg time="2025-05-29T00:41:30.005879" level="INFO">C:\Program Files\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.github.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2025-05-29T00:41:30.006629" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<var>${response}</var>
-<arg>alias=gitapibearer</arg>
-<arg>url=/repos/${GIT_USERNAME}/Durgaa</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-05-29T00:41:29.629548" elapsed="0.377409"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-05-29T00:41:30.009956" level="FAIL">Dictionary '${response.json()}' has no key 'private'.</msg>
-<arg>${response.json()}[private]</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="FAIL" start="2025-05-29T00:41:30.007749" elapsed="0.002644">Dictionary '${response.json()}' has no key 'private'.</status>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>${response.json()['private']}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-05-29T00:41:30.011144" elapsed="0.000860"/>
-=======
-<status status="PASS" start="2025-05-28T11:58:23.679935" elapsed="0.000631"/>
-</kw>
-<status status="PASS" start="2025-05-28T11:58:23.676295" elapsed="0.004406"/>
-</kw>
-<test id="s1-t1" name="TC1 Get Repo Details" line="18">
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-05-28T11:58:24.086120" level="INFO">GET Request : url=https://api.github.com/repos/dbala-cloud/repo1 
- path_url=/repos/dbala-cloud/repo1 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/vnd.github+json', 'Connection': 'keep-alive', 'Authorization': 'Bearer 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'} 
- body=None 
- </msg>
-<msg time="2025-05-28T11:58:24.087101" level="INFO">GET Response : url=https://api.github.com/repos/dbala-cloud/repo1 
+<msg time="2025-05-29T11:13:00.938985" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
  status=200, reason=OK 
- headers={'Date': 'Wed, 28 May 2025 06:28:24 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'private, max-age=60, s-maxage=60', 'Vary': 'Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With', 'ETag': 'W/"2ee3aa261f23950538113fe5a55551b130d30e7ab6f9725aab4257fa3930c301"', 'Last-Modified': 'Wed, 28 May 2025 05:36:36 GMT', 'X-OAuth-Scopes': 'admin:enterprise, admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, admin:ssh_signing_key, audit_log, codespace, copilot, delete:packages, delete_repo, gist, notifications, project, repo, user, workflow, write:discussion, write:network_configurations, write:packages', 'X-Accepted-OAuth-Scopes': 'repo', 'github-authentication-token-expiration': '2025-06-04 05:37:56 UTC', 'X-GitHub-Media-Type': 'github.v3; format=json', 'x-github-api-version-selected': '2022-11-28', 'X-RateLimit-Limit': '5000', 'X-RateLimit-Remaining': '4965', 'X-RateLimit-Reset': '1748414900', 'X-RateLimit-Used': '35', 'X-RateLimit-Resource': 'core', 'Access-Control-Expose-Headers': 'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset', 'Access-Control-Allow-Origin': '*', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains; preload', 'X-Frame-Options': 'deny', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '0', 'Referrer-Policy': 'origin-when-cross-origin, strict-origin-when-cross-origin', 'Content-Security-Policy': "default-src 'none'", 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'Server': 'github.com', 'X-GitHub-Request-Id': 'DB6A:344EFC:346D4E:45A90A:6836AD07'} 
- body={"id":991758489,"node_id":"R_kgDOOx0ImQ","name":"repo1","full_name":"dbala-cloud/repo1","private":false,"owner":{"login":"dbala-cloud","id":213742160,"node_id":"U_kgDODL1yUA","avatar_url":"https://avatars.githubusercontent.com/u/213742160?v=4","gravatar_id":"","url":"https://api.github.com/users/dbala-cloud","html_url":"https://github.com/dbala-cloud","followers_url":"https://api.github.com/users/dbala-cloud/followers","following_url":"https://api.github.com/users/dbala-cloud/following{/other_user}","gists_url":"https://api.github.com/users/dbala-cloud/gists{/gist_id}","starred_url":"https://api.github.com/users/dbala-cloud/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/dbala-cloud/subscriptions","organizations_url":"https://api.github.com/users/dbala-cloud/orgs","repos_url":"https://api.github.com/users/dbala-cloud/repos","events_url":"https://api.github.com/users/dbala-cloud/events{/privacy}","received_events_url":"https://api.github.com/users/dbala-cloud/received_events","type":"User","user_view_type":"public","site_admin":false},"html_url":"https://github.com/dbala-cloud/repo1","description":null,"fork":false,"url":"https://api.github.com/repos/dbala-cloud/repo1","forks_url":"https://api.github.com/repos/dbala-cloud/repo1/forks","keys_url":"https://api.github.com/repos/dbala-cloud/repo1/keys{/key_id}","collaborators_url":"https://api.github.com/repos/dbala-cloud/repo1/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/dbala-cloud/repo1/teams","hooks_url":"https://api.github.com/repos/dbala-cloud/repo1/hooks","issue_events_url":"https://api.github.com/repos/dbala-cloud/repo1/issues/events{/number}","events_url":"https://api.github.com/repos/dbala-cloud/repo1/events","assignees_url":"https://api.github.com/repos/dbala-cloud/repo1/assignees{/user}","branches_url":"https://api.github.com/repos/dbala-cloud/repo1/branches{/branch}","tags_url":"https://api.github.com/repos/dbala-cloud/repo1/tags","blobs_url":"https://api.github.com/repos/dbala-cloud/repo1/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/dbala-cloud/repo1/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/dbala-cloud/repo1/git/refs{/sha}","trees_url":"https://api.github.com/repos/dbala-cloud/repo1/git/trees{/sha}","statuses_url":"https://api.github.com/repos/dbala-cloud/repo1/statuses/{sha}","languages_url":"https://api.github.com/repos/dbala-cloud/repo1/languages","stargazers_url":"https://api.github.com/repos/dbala-cloud/repo1/stargazers","contributors_url":"https://api.github.com/repos/dbala-cloud/repo1/contributors","subscribers_url":"https://api.github.com/repos/dbala-cloud/repo1/subscribers","subscription_url":"https://api.github.com/repos/dbala-cloud/repo1/subscription","commits_url":"https://api.github.com/repos/dbala-cloud/repo1/commits{/sha}","git_commits_url":"https://api.github.com/repos/dbala-cloud/repo1/git/commits{/sha}","comments_url":"https://api.github.com/repos/dbala-cloud/repo1/comments{/number}","issue_comment_url":"https://api.github.com/repos/dbala-cloud/repo1/issues/comments{/number}","contents_url":"https://api.github.com/repos/dbala-cloud/repo1/contents/{+path}","compare_url":"https://api.github.com/repos/dbala-cloud/repo1/compare/{base}...{head}","merges_url":"https://api.github.com/repos/dbala-cloud/repo1/merges","archive_url":"https://api.github.com/repos/dbala-cloud/repo1/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/dbala-cloud/repo1/downloads","issues_url":"https://api.github.com/repos/dbala-cloud/repo1/issues{/number}","pulls_url":"https://api.github.com/repos/dbala-cloud/repo1/pulls{/number}","milestones_url":"https://api.github.com/repos/dbala-cloud/repo1/milestones{/number}","notifications_url":"https://api.github.com/repos/dbala-cloud/repo1/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/dbala-cloud/repo1/labels{/name}","releases_url":"https://api.github.com/repos/dbala-cloud/repo1/releases{/id}","deployments_url":"https://api.github.com/repos/dbala-cloud/repo1/deployments","created_at":"2025-05-28T05:36:36Z","updated_at":"2025-05-28T05:36:36Z","pushed_at":"2025-05-28T05:36:36Z","git_url":"git://github.com/dbala-cloud/repo1.git","ssh_url":"git@github.com:dbala-cloud/repo1.git","clone_url":"https://github.com/dbala-cloud/repo1.git","svn_url":"https://github.com/dbala-cloud/repo1","homepage":null,"size":0,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"has_discussions":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":0,"license":null,"allow_forking":true,"is_template":false,"web_commit_signoff_required":false,"topics":[],"visibility":"public","forks":0,"open_issues":0,"watchers":0,"default_branch":"main","permissions":{"admin":true,"maintain":true,"push":true,"triage":true,"pull":true},"temp_clone_token":"","allow_squash_merge":true,"allow_merge_commit":true,"allow_rebase_merge":true,"allow_auto_merge":false,"delete_branch_on_merge":false,"allow_update_branch":false,"use_squash_pr_title_as_default":false,"squash_merge_commit_message":"COMMIT_MESSAGES","squash_merge_commit_title":"COMMIT_OR_PR_TITLE","merge_commit_message":"PR_TITLE","merge_commit_title":"MERGE_MESSAGE","security_and_analysis":{"secret_scanning":{"status":"enabled"},"secret_scanning_push_protection":{"status":"enabled"},"dependabot_security_updates":{"status":"disabled"},"secret_scanning_non_provider_patterns":{"status":"disabled"},"secret_scanning_validity_checks":{"status":"disabled"}},"network_count":0,"subscribers_count":0} 
+ headers={'Date': 'Thu, 29 May 2025 05:43:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cf-Ray': '9473abf63fbcaa6a-MAA', 'Server': 'cloudflare', 'Content-Encoding': 'gzip', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1748487106&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=dLthw0X1xF5UlW9rcxNGqBpbKHCDT1qVwIRqf24OcEk%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1748487106&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=dLthw0X1xF5UlW9rcxNGqBpbKHCDT1qVwIRqf24OcEk%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Ratelimit-Policy': '100;w=60', 'Ratelimit-Limit': '100', 'Ratelimit-Remaining': '98', 'Ratelimit-Reset': '60', 'Etag': 'W/"440-ZjsmMKR8P3usr2uJZbOCGCxC3Uw"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'Cf-Cache-Status': 'HIT', 'Age': '3068', 'Vary': 'Accept-Encoding', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=14920&amp;min_rtt=14191&amp;rtt_var=6780&amp;sent=5&amp;recv=6&amp;lost=0&amp;retrans=0&amp;sent_bytes=2836&amp;recv_bytes=802&amp;delivery_rate=210016&amp;cwnd=237&amp;unsent_bytes=0&amp;cid=662d4b02af77ceb7&amp;ts=32&amp;x=0"'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}} 
  </msg>
-<msg time="2025-05-28T11:58:24.088462" level="INFO">C:\Program Files\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.github.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-05-29T11:13:00.938985" level="INFO">C:\Program Files\Python310\lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-05-28T11:58:24.089257" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-05-29T11:13:00.938985" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
-<arg>alias=gitapibearer</arg>
-<arg>url=/repos/${GIT_USERNAME}/repo1</arg>
-<arg>expected_status=any</arg>
+<arg>alias=req</arg>
+<arg>url=api/users?page=2</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-05-28T11:58:23.681196" elapsed="0.408304"/>
+<status status="PASS" start="2025-05-29T11:13:00.855351" elapsed="0.083634"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-05-28T11:58:24.093143" level="INFO">False</msg>
-<arg>${response.json()}[private]</arg>
+<msg time="2025-05-29T11:13:00.940528" level="INFO">{'page': 2, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces/7-image.jpg'}, {'id': 8, 'email': 'lindsay.ferguson@reqres.in', 'first_name': 'Lindsay', 'last_name': 'Ferguson', 'avatar': 'https://reqres.in/img/faces/8-image.jpg'}, {'id': 9, 'email': 'tobias.funke@reqres.in', 'first_name': 'Tobias', 'last_name': 'Funke', 'avatar': 'https://reqres.in/img/faces/9-image.jpg'}, {'id': 10, 'email': 'byron.fields@reqres.in', 'first_name': 'Byron', 'last_name': 'Fields', 'avatar': 'https://reqres.in/img/faces/10-image.jpg'}, {'id': 11, 'email': 'george.edwards@reqres.in', 'first_name': 'George', 'last_name': 'Edwards', 'avatar': 'https://reqres.in/img/faces/11-image.jpg'}, {'id': 12, 'email': 'rachel.howell@reqres.in', 'first_name': 'Rachel', 'last_name': 'Howell', 'avatar': 'https://reqres.in/img/faces/12-image.jpg'}], 'support': {'url': 'https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral', 'text': 'Tired of writing endless social media content? Let Content Caddy generate it for you.'}}</msg>
+<arg>${response.json()}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-05-28T11:58:24.090035" elapsed="0.003457"/>
+<status status="PASS" start="2025-05-29T11:13:00.938985" elapsed="0.001543"/>
+</kw>
+<kw name="Get value from JSON" owner="RPA.JSON">
+<msg time="2025-05-29T11:13:00.941547" level="INFO">Get value from JSON with expression: '$.page'</msg>
+<msg time="2025-05-29T11:13:00.974563" level="INFO">${value} = 2</msg>
+<var>${value}</var>
+<arg>${response.json()}</arg>
+<arg>$.page</arg>
+<doc>Get a single value from a JSON serializable object that matches the given expression.</doc>
+<status status="PASS" start="2025-05-29T11:13:00.940528" elapsed="0.034035"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-05-28T11:58:24.098195" level="INFO">False</msg>
-<arg>${response.json()['private']}</arg>
+<msg time="2025-05-29T11:13:00.975931" level="INFO">2</msg>
+<arg>${value}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-05-28T11:58:24.095383" elapsed="0.003519"/>
->>>>>>> parent of 5874081 (update code)
+<status status="PASS" start="2025-05-29T11:13:00.974563" elapsed="0.001368"/>
 </kw>
-<kw name="Should Not Be True" owner="BuiltIn">
-<arg>${response.json()['private']}</arg>
-<doc>Fails if the given condition is true.</doc>
-<<<<<<< HEAD
-<status status="NOT RUN" start="2025-05-29T00:41:30.012716" elapsed="0.000413"/>
+<kw name="Get value from JSON" owner="RPA.JSON">
+<msg time="2025-05-29T11:13:00.976970" level="INFO">Get value from JSON with expression: '$.data[0].email'</msg>
+<msg time="2025-05-29T11:13:01.002715" level="INFO">${value} = michael.lawson@reqres.in</msg>
+<var>${value}</var>
+<arg>${response.json()}</arg>
+<arg>$.data[0].email</arg>
+<doc>Get a single value from a JSON serializable object that matches the given expression.</doc>
+<status status="PASS" start="2025-05-29T11:13:00.975931" elapsed="0.027815"/>
 </kw>
-<status status="FAIL" start="2025-05-29T00:41:29.628848" elapsed="0.385081">Dictionary '${response.json()}' has no key 'private'.</status>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-29T11:13:01.004289" level="INFO">michael.lawson@reqres.in</msg>
+<arg>${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-29T11:13:01.003746" elapsed="0.000543"/>
+</kw>
+<kw name="Get values from JSON" owner="RPA.JSON">
+<msg time="2025-05-29T11:13:01.005557" level="INFO">Get values from JSON with expression: '$.data[*].email'</msg>
+<msg time="2025-05-29T11:13:01.032597" level="INFO">${value} = ['michael.lawson@reqres.in', 'lindsay.ferguson@reqres.in', 'tobias.funke@reqres.in', 'byron.fields@reqres.in', 'george.edwards@reqres.in', 'rachel.howell@reqres.in']</msg>
+<var>${value}</var>
+<arg>${response.json()}</arg>
+<arg>$.data[*].email</arg>
+<doc>Get all values from a JSON serializable object that match the given expression.</doc>
+<status status="PASS" start="2025-05-29T11:13:01.004289" elapsed="0.028308"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-29T11:13:01.033593" level="INFO">['michael.lawson@reqres.in', 'lindsay.ferguson@reqres.in', 'tobias.funke@reqres.in', 'byron.fields@reqres.in', 'george.edwards@reqres.in', 'rachel.howell@reqres.in']</msg>
+<arg>${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-29T11:13:01.032597" elapsed="0.000996"/>
+</kw>
+<kw name="Get values from JSON" owner="RPA.JSON">
+<msg time="2025-05-29T11:13:01.035169" level="INFO">Get values from JSON with expression: '$..email'</msg>
+<msg time="2025-05-29T11:13:01.061756" level="INFO">${value} = ['michael.lawson@reqres.in', 'lindsay.ferguson@reqres.in', 'tobias.funke@reqres.in', 'byron.fields@reqres.in', 'george.edwards@reqres.in', 'rachel.howell@reqres.in']</msg>
+<var>${value}</var>
+<arg>${response.json()}</arg>
+<arg>$..email</arg>
+<doc>Get all values from a JSON serializable object that match the given expression.</doc>
+<status status="PASS" start="2025-05-29T11:13:01.034133" elapsed="0.027623"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-29T11:13:01.063299" level="INFO">['michael.lawson@reqres.in', 'lindsay.ferguson@reqres.in', 'tobias.funke@reqres.in', 'byron.fields@reqres.in', 'george.edwards@reqres.in', 'rachel.howell@reqres.in']</msg>
+<arg>${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-29T11:13:01.061756" elapsed="0.001543"/>
+</kw>
+<kw name="Get value from JSON" owner="RPA.JSON">
+<msg time="2025-05-29T11:13:01.064357" level="INFO">Get value from JSON with expression: '$..email'</msg>
+<msg time="2025-05-29T11:13:01.091637" level="FAIL">ValueError: Found 6 matches: michael.lawson@reqres.in, lindsay.ferguson@reqres.in, tobias.funke@reqres.in, byron.fields@reqres.in, george.edwards@reqres.in, rachel.howell@reqres.in</msg>
+<var>${value}</var>
+<arg>${response.json()}</arg>
+<arg>$..email</arg>
+<doc>Get a single value from a JSON serializable object that matches the given expression.</doc>
+<status status="FAIL" start="2025-05-29T11:13:01.063299" elapsed="0.029351">ValueError: Found 6 matches: michael.lawson@reqres.in, lindsay.ferguson@reqres.in, tobias.funke@reqres.in, byron.fields@reqres.in, george.edwards@reqres.in, rachel.howell@reqres.in</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-05-29T11:13:01.092650" elapsed="0.000000"/>
+</kw>
+<kw name="Get values from JSON" owner="RPA.JSON">
+<var>${value}</var>
+<arg>${response.json()}</arg>
+<arg>$.data[*].[\\email]</arg>
+<doc>Get all values from a JSON serializable object that match the given expression.</doc>
+<status status="NOT RUN" start="2025-05-29T11:13:01.092650" elapsed="0.000997"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-05-29T11:13:01.094155" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-05-29T11:13:00.850759" elapsed="0.243396">ValueError: Found 6 matches: michael.lawson@reqres.in, lindsay.ferguson@reqres.in, tobias.funke@reqres.in, byron.fields@reqres.in, george.edwards@reqres.in, rachel.howell@reqres.in</status>
 </test>
-<test id="s1-s1-t2" name="TC2 Update Git Details" line="14">
-<kw name="Get File For Streaming Upload" owner="RequestsLibrary">
-<msg time="2025-05-29T00:41:30.020441" level="INFO">${body} = &lt;_io.BufferedReader name='D:\\Balaji\\Company\\Vivriti\\AutomationProject\\files\\repo_update.json'&gt;</msg>
-<var>${body}</var>
-<arg>path=${EXECDIR}${/}files${/}repo_update.json</arg>
-<doc>Opens and returns a file descriptor of a specified file to be passed as ``data`` parameter
-to other requests keywords.</doc>
-<status status="PASS" start="2025-05-29T00:41:30.018411" elapsed="0.002318"/>
-</kw>
-<kw name="PATCH On Session" owner="RequestsLibrary">
-<msg time="2025-05-29T00:41:30.276354" level="INFO">PATCH Request : url=https://api.github.com/repos/dbala-cloud/repo1 
- path_url=/repos/dbala-cloud/repo1 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/vnd.github+json', 'Connection': 'keep-alive', 'Authorization': 'Bearer llllllllllllljk', 'Content-Length': '49'} 
- body=&lt;_io.BufferedReader name='D:\\Balaji\\Company\\Vivriti\\AutomationProject\\files\\repo_update.json'&gt; 
- </msg>
-<msg time="2025-05-29T00:41:30.276570" level="INFO">PATCH Response : url=https://api.github.com/repos/dbala-cloud/repo1 
- status=401, reason=Unauthorized 
- headers={'Date': 'Wed, 28 May 2025 19:11:30 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '95', 'X-GitHub-Media-Type': 'github.v3; format=json', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '58', 'X-RateLimit-Reset': '1748463089', 'X-RateLimit-Used': '2', 'X-RateLimit-Resource': 'core', 'Access-Control-Expose-Headers': 'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset', 'Access-Control-Allow-Origin': '*', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains; preload', 'X-Frame-Options': 'deny', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '0', 'Referrer-Policy': 'origin-when-cross-origin, strict-origin-when-cross-origin', 'Content-Security-Policy': "default-src 'none'", 'Vary': 'Accept-Encoding, Accept, X-Requested-With', 'Server': 'github.com', 'X-GitHub-Request-Id': 'F995:70382:171B89:1D05CB:68375FE1'} 
- body={"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"} 
- </msg>
-<msg time="2025-05-29T00:41:30.276979" level="INFO">C:\Program Files\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.github.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2025-05-29T00:41:30.277179" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<var>${response}</var>
-<arg>alias=gitapibearer</arg>
-<arg>url=/repos/${GIT_USERNAME}/repo1</arg>
-<arg>data=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a PATCH request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-05-29T00:41:30.021175" elapsed="0.256083"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<msg time="2025-05-29T00:41:30.277780" level="FAIL">Url: https://api.github.com/repos/dbala-cloud/repo1 Expected status: 401 != 200</msg>
-<arg>200</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="FAIL" start="2025-05-29T00:41:30.277479" elapsed="0.005419">Url: https://api.github.com/repos/dbala-cloud/repo1 Expected status: 401 != 200</status>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>${response}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-05-29T00:41:30.283155" elapsed="0.000106"/>
-</kw>
-<status status="FAIL" start="2025-05-29T00:41:30.016933" elapsed="0.266581">Url: https://api.github.com/repos/dbala-cloud/repo1 Expected status: 401 != 200</status>
-</test>
-<test id="s1-s1-t3" name="TC3 Update Git Details" line="21">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-05-29T00:41:30.285097" level="INFO">&amp;{body} = { name=repo1 | private=True }</msg>
-<var>&amp;{body}</var>
-<arg>name=repo1</arg>
-<arg>private=${True}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-05-29T00:41:30.284569" elapsed="0.000645"/>
-</kw>
-<kw name="PATCH On Session" owner="RequestsLibrary">
-<msg time="2025-05-29T00:41:30.544186" level="INFO">PATCH Request : url=https://api.github.com/repos/dbala-cloud/repo1 
- path_url=/repos/dbala-cloud/repo1 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/vnd.github+json', 'Connection': 'keep-alive', 'Authorization': 'Bearer llllllllllllljk', 'Content-Length': '34', 'Content-Type': 'application/json'} 
- body=b'{"name": "repo1", "private": true}' 
- </msg>
-<msg time="2025-05-29T00:41:30.544490" level="INFO">PATCH Response : url=https://api.github.com/repos/dbala-cloud/repo1 
- status=401, reason=Unauthorized 
- headers={'Date': 'Wed, 28 May 2025 19:11:30 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '95', 'X-GitHub-Media-Type': 'github.v3; format=json', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '57', 'X-RateLimit-Reset': '1748463089', 'X-RateLimit-Used': '3', 'X-RateLimit-Resource': 'core', 'Access-Control-Expose-Headers': 'ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset', 'Access-Control-Allow-Origin': '*', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains; preload', 'X-Frame-Options': 'deny', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '0', 'Referrer-Policy': 'origin-when-cross-origin, strict-origin-when-cross-origin', 'Content-Security-Policy': "default-src 'none'", 'Vary': 'Accept-Encoding, Accept, X-Requested-With', 'Server': 'github.com', 'X-GitHub-Request-Id': 'F995:70382:171B9C:1D05E4:68375FE2'} 
- body={"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"} 
- </msg>
-<msg time="2025-05-29T00:41:30.544670" level="INFO">C:\Program Files\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.github.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2025-05-29T00:41:30.544980" level="INFO">${response} = &lt;Response [401]&gt;</msg>
-<var>${response}</var>
-<arg>alias=gitapibearer</arg>
-<arg>url=repos/${GIT_USERNAME}/repo1</arg>
-<arg>json=${body}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a PATCH request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-05-29T00:41:30.285387" elapsed="0.259684"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<msg time="2025-05-29T00:41:30.545566" level="FAIL">Url: https://api.github.com/repos/dbala-cloud/repo1 Expected status: 401 != 200</msg>
-<arg>200</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="FAIL" start="2025-05-29T00:41:30.545267" elapsed="0.002005">Url: https://api.github.com/repos/dbala-cloud/repo1 Expected status: 401 != 200</status>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>${response}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-05-29T00:41:30.548089" elapsed="0.000346"/>
-</kw>
-<status status="FAIL" start="2025-05-29T00:41:30.284149" elapsed="0.266146">Url: https://api.github.com/repos/dbala-cloud/repo1 Expected status: 401 != 200</status>
-</test>
-<status status="FAIL" start="2025-05-29T00:41:29.624194" elapsed="0.928742"/>
-</suite>
-<kw name="Delete All Sessions" owner="RequestsLibrary" type="TEARDOWN">
-<msg time="2025-05-29T00:41:30.554383" level="INFO">Deleting All Sessions</msg>
-<doc>Removes all the session objects</doc>
-<status status="PASS" start="2025-05-29T00:41:30.554034" elapsed="0.000600"/>
-</kw>
-<status status="FAIL" start="2025-05-29T00:41:28.992335" elapsed="1.562396"/>
+<status status="FAIL" start="2025-05-29T11:13:00.294341" elapsed="0.801292"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="3" skip="0">All Tests</stat>
-=======
-<status status="PASS" start="2025-05-28T11:58:24.099511" elapsed="0.001518"/>
-</kw>
-<status status="PASS" start="2025-05-28T11:58:23.680800" elapsed="0.420796"/>
-</test>
-<kw name="Delete All Sessions" owner="RequestsLibrary" type="TEARDOWN">
-<msg time="2025-05-28T11:58:24.104303" level="INFO">Deleting All Sessions</msg>
-<doc>Removes all the session objects</doc>
-<status status="PASS" start="2025-05-28T11:58:24.103592" elapsed="0.001057"/>
-</kw>
-<status status="PASS" start="2025-05-28T11:58:22.823972" elapsed="1.280831"/>
-</suite>
-<statistics>
-<total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
->>>>>>> parent of 5874081 (update code)
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<<<<<<< HEAD
-<stat name="Git Api Suite" id="s1" pass="0" fail="3" skip="0">Git Api Suite</stat>
-<stat name="Demo2 Git Api Suite" id="s1-s1" pass="0" fail="3" skip="0">Git Api Suite.Demo2 Git Api Suite</stat>
-=======
-<stat name="Demo3 Git New" id="s1" pass="1" fail="0" skip="0">Demo3 Git New</stat>
->>>>>>> parent of 5874081 (update code)
+<stat name="Demo3 Req" id="s1" pass="0" fail="1" skip="0">Demo3 Req</stat>
 </suite>
 </statistics>
 <errors>
