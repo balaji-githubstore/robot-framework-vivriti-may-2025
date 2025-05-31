@@ -25,7 +25,7 @@ TC3
     Close All Browsers
 
 TC4_Sign_in
-    Open Browser    url=https://www.facebook.com/    browser=chrome
+    Open Browser    url=https://www.facebook.com/    browser=edge
     Input Text    id:email    hello8894454545455@gmail.com
     Input Password    id=pass    welcome123
     Click Element    name=login

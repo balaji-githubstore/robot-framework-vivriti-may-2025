@@ -1,17 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-21T13:27:21.996871" rpa="false" schemaversion="5">
-<suite id="s1" name="Demo1 Basics Suite" source="D:\Balaji\Company\Viv\AutomationProject\robot_selenium_suite\demo1_basics_suite.robot">
-<test id="s1-t1" name="TC1" line="5">
+<robot generator="Robot 7.2.2 (Python 3.10.0 on win32)" generated="2025-05-31T13:45:20.592047" rpa="false" schemaversion="5">
+<suite id="s1" name="Demo1 Basics Suite" source="D:\Balaji\Company\Vivriti\AutomationProject\robot_selenium_suite\demo1_basics_suite.robot">
+<test id="s1-t1" name="TC4_Sign_in" line="27">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-21T13:27:22.338507" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
-<arg>url=https://www.google.com/</arg>
+<msg time="2025-05-31T13:45:20.864292" level="INFO">Opening browser 'chrome' to base url 'https://www.facebook.com/'.</msg>
+<arg>url=https://www.facebook.com/</arg>
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-21T13:27:22.338066" elapsed="2.659306"/>
+<status status="PASS" start="2025-05-31T13:45:20.864292" elapsed="3.219600"/>
 </kw>
-<status status="PASS" start="2025-05-21T13:27:22.336668" elapsed="2.662623"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T13:45:24.084937" level="INFO">Typing text 'hello8894454545455@gmail.com' into text field 'id:email'.</msg>
+<arg>id:email</arg>
+<arg>hello8894454545455@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T13:45:24.083892" elapsed="0.198297"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-31T13:45:24.284499" level="INFO">Typing password into text field 'id=pass'.</msg>
+<msg time="2025-05-31T13:45:24.351454" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id=pass</arg>
+<arg>welcome123</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T13:45:24.283493" elapsed="0.138284"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T13:45:24.421777" level="INFO">Clicking element 'name=login'.</msg>
+<arg>name=login</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T13:45:24.421777" elapsed="0.141339"/>
+</kw>
+<status status="PASS" start="2025-05-31T13:45:20.861179" elapsed="3.702941"/>
 </test>
-<status status="PASS" start="2025-05-21T13:27:21.998271" elapsed="3.003129"/>
+<status status="PASS" start="2025-05-31T13:45:20.594228" elapsed="3.972038"/>
 </suite>
 <statistics>
 <total>
@@ -24,5 +45,19 @@
 </suite>
 </statistics>
 <errors>
+<msg time="2025-05-31T13:45:20.860171" level="ERROR">Error in file 'D:\Balaji\Company\Vivriti\AutomationProject\robot_selenium_suite\demo1_basics_suite.robot' on line 3: Importing library 'DatabaseLibrary' failed: ModuleNotFoundError: No module named 'DatabaseLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Program Files\Python310\Scripts\robot.exe
+  C:\Program Files\Python310\python310.zip
+  C:\Program Files\Python310\DLLs
+  C:\Program Files\Python310\lib
+  C:\Program Files\Python310
+  C:\Users\HI\AppData\Roaming\Python\Python310\site-packages
+  C:\Program Files\Python310\lib\site-packages
+  C:\Program Files\Python310\lib\site-packages\win32
+  C:\Program Files\Python310\lib\site-packages\win32\lib
+  C:\Program Files\Python310\lib\site-packages\Pythonwin</msg>
 </errors>
 </robot>

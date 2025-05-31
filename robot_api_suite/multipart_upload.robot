@@ -20,11 +20,17 @@ TC2 Multi Image Upload Dictionary
     ${image_file1}  Get File For Streaming Upload    ${EXECDIR}${/}files${/}demo.jpg
     ${image_file2}  Get File For Streaming Upload    ${EXECDIR}${/}files${/}demo.jpg
 
-    ${files}=    Create Dictionary    randombytes1    ${image_file1}    randombytes2    ${image_file2}      randombytes3    ${image_file2}
+    ${files}=    Create Dictionary    file    ${image_file1}
+    ...     randombytes2    ${image_file2}      randombytes3    ${image_file2}
 
-    ${response}     POST On Session     alias=petstore      url=/pet/5/uploadImage     data=${payload}
+    ${response}     POST On Session     alias=petstore      url=pet/5/uploadImage     data=${payload}
     ...   files=${files}
-    ...     expected_status=any
+    ...     expected_status=200
+
+
+
+
+
 
 TC3 Multi Image Upload List
     &{payload}      Create Dictionary       additionalMetadata=image/png
@@ -35,7 +41,7 @@ TC3 Multi Image Upload List
     ${file_1_tuple}=    Create List     demo.jpg   ${image_file1}
     ${file_2_tuple}=    Create List     demo.jpg   ${image_file2}
 
-    ${file_1_upload}=    Create List    randombytes1    ${file_1_tuple}
+    ${file_1_upload}=    Create List    file    ${file_1_tuple}
     ${file_2_upload}=    Create List    randombytes2    ${file_2_tuple}
 
     ${files}=    Create List    ${file_1_upload}    ${file_2_upload}

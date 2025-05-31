@@ -25,15 +25,15 @@ TC2 Update Git Details
    Log    ${response}
 
 TC3
-    ${file1}    Get File For Streaming Upload    path=${EXECDIR}${/}files${/}demo1.png
-    ${file2}    Get File For Streaming Upload    path=${EXECDIR}${/}files${/}demo1.png
+    ${file1}    Get File For Streaming Upload    path=${EXECDIR}${/}files${/}demo.png
+    ${file2}    Get File For Streaming Upload    path=${EXECDIR}${/}files${/}demo.png
 
-     ${files}=   Create Dictionary  randombytes1  ${file1}  randombytes2  ${file2}
+     ${files}=   Create Dictionary  file  ${file1}
 
      ${payload}   Create Dictionary      additionalMetadata=image/png
 
      Create Session    alias=pet    url=https://petstore.swagger.io/v2
 
-     ${response}    POST On Session    alias=pet    url=pet/10/UploadImage     files=${files}      data=${payload}
+     ${response}    POST On Session    alias=pet    url=pet/101/UploadImage     files=${files}      data=${payload}
      ...   expected_status=200
      Log    ${response}
